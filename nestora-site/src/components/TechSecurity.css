@@ -1,0 +1,133 @@
+.tech-security {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5em;
+  color: var(--primary-teal);
+  margin-bottom: 20px;
+}
+
+.section-header p {
+  font-size: 1.2em;
+  color: var(--muted-gray);
+}
+
+.tech-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+}
+
+.tech-stack h3,
+.security-features h3 {
+  font-size: 1.8em;
+  color: var(--primary-teal);
+  margin-bottom: 30px;
+}
+
+.stack-grid {
+  display: grid;
+  gap: 15px;
+}
+
+.stack-item {
+  background-color: #f8f9fa;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-orange);
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.stack-item strong {
+  color: var(--primary-teal);
+}
+
+.security-features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.security-features li {
+  background-color: #f8f9fa;
+  padding: 15px 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  position: relative;
+  padding-left: 40px;
+}
+
+.security-features li::before {
+  content: '🔒';
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .tech-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .section-header h2 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-security {
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8em;
+  }
+
+  .section-header p {
+    font-size: 1em;
+  }
+
+  .tech-content {
+    gap: 40px;
+  }
+
+  .tech-stack h3,
+  .security-features h3 {
+    font-size: 1.4em;
+  }
+
+  .stack-item {
+    padding: 12px 15px;
+    font-size: 0.9em;
+  }
+
+  .security-features li {
+    padding: 12px 15px;
+    padding-left: 35px;
+    font-size: 0.9em;
+  }
+
+  .security-features li::before {
+    font-size: 1em;
+  }
+}

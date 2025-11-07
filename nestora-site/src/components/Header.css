@@ -1,0 +1,78 @@
+.header {
+  background-color: var(--white);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header .container {
+  /* scope container rules used by header only (global container defined in index.css) */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo h1 {
+  color: var(--primary-teal);
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+.logo a {
+  display: inline-block;
+}
+
+.site-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+/* utility: visually hide text but keep it available for screen readers */
+.visually-hidden,
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  color: var(--muted-gray);
+  font-weight: 500;
+  transition: color 0.3s;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--primary-teal);
+}
+
+.cta button {
+  background-color: var(--accent-orange);
+}
+
+.cta button:hover {
+  background-color: var(--primary-teal);
+}
+
+@media (max-width: 768px) {
+  .nav ul {
+    display: none;
+  }
+  .container {
+    padding: 0 15px;
+  }
+}

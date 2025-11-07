@@ -1,0 +1,190 @@
+.pilot-growth {
+  padding: 80px 0;
+  background-color: var(--white);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5em;
+  color: var(--primary-teal);
+  margin-bottom: 20px;
+}
+
+.section-header p {
+  font-size: 1.2em;
+  color: var(--muted-gray);
+}
+
+.pilot-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.metrics h3,
+.roadmap h3 {
+  font-size: 1.8em;
+  color: var(--primary-teal);
+  margin-bottom: 30px;
+}
+
+.metrics-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.metric-card {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-orange);
+}
+
+.metric-card h4 {
+  color: var(--primary-teal);
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.metric-card p {
+  color: var(--muted-gray);
+  margin: 0;
+  font-weight: 500;
+}
+
+.roadmap-timeline {
+  position: relative;
+}
+
+.roadmap-timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--accent-orange);
+}
+
+.roadmap-item {
+  display: flex;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.roadmap-item::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent-orange);
+  border-radius: 50%;
+  border: 2px solid var(--white);
+}
+
+.phase {
+  background-color: var(--primary-teal);
+  color: var(--white);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9em;
+  margin-right: 20px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.milestone {
+  background-color: #f8f9fa;
+  padding: 15px 20px;
+  border-radius: 8px;
+  flex: 1;
+  color: var(--muted-gray);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .pilot-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .roadmap-item {
+    flex-direction: column;
+  }
+
+  .phase {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .section-header h2 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .pilot-growth {
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8em;
+  }
+
+  .section-header p {
+    font-size: 1em;
+  }
+
+  .pilot-content {
+    gap: 40px;
+  }
+
+  .metrics h3,
+  .roadmap h3 {
+    font-size: 1.4em;
+  }
+
+  .metric-card {
+    padding: 15px;
+  }
+
+  .metric-card h4 {
+    font-size: 1em;
+  }
+
+  .metric-card p {
+    font-size: 0.9em;
+  }
+
+  .roadmap-item {
+    margin-bottom: 20px;
+  }
+
+  .phase {
+    padding: 6px 12px;
+    font-size: 0.8em;
+    min-width: 70px;
+  }
+
+  .milestone {
+    padding: 12px 15px;
+    font-size: 0.9em;
+  }
+}

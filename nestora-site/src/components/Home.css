@@ -1,0 +1,130 @@
+.home {
+  background: linear-gradient(135deg, var(--primary-teal) 0%, var(--accent-orange) 100%);
+  color: var(--white);
+  /* reduce excessive top padding now header is fixed and scroll-padding is synced */
+  padding: 100px 0 80px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.home .container {
+  /* use global .container for width/padding; scope grid layout here */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  color: aliceblue;
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 20px;
+}
+
+.primary-btn {
+  background-color: var(--accent-orange);
+  color: var(--white);
+  padding: 15px 30px;
+  font-size: 1.1em;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.primary-btn:hover {
+  background-color: var(--white);
+  color: var(--primary-teal);
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--white);
+  padding: 15px 30px;
+  font-size: 1.1em;
+  font-weight: 600;
+  border: 2px solid var(--white);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.secondary-btn:hover {
+  background-color: var(--white);
+  color: var(--primary-teal);
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-placeholder {
+  width: 400px;
+  height: 300px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    padding: 12px 20px;
+    font-size: 1em;
+  }
+}

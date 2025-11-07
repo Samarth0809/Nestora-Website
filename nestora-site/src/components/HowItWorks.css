@@ -1,0 +1,145 @@
+.how-it-works {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header h2 {
+  font-size: 2.5em;
+  color: var(--primary-teal);
+  margin-bottom: 20px;
+}
+
+.section-header p {
+  font-size: 1.2em;
+  color: var(--muted-gray);
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.step-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  background-color: var(--accent-orange);
+  color: var(--white);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2em;
+  margin: 0 auto 15px;
+}
+
+.step-icon {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.step-card h3 {
+  font-size: 1.4em;
+  color: var(--primary-teal);
+  margin-bottom: 15px;
+}
+
+.step-card p {
+  color: var(--muted-gray);
+  line-height: 1.6;
+}
+
+.arrow {
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: var(--accent-orange);
+  display: none;
+}
+
+@media (min-width: 769px) {
+  .arrow {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .steps-container {
+    flex-direction: column;
+  }
+
+  .step-card {
+    margin-bottom: 20px;
+  }
+
+  .section-header h2 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works {
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8em;
+  }
+
+  .section-header p {
+    font-size: 1em;
+  }
+
+  .steps-container {
+    gap: 15px;
+  }
+
+  .step-card {
+    padding: 20px;
+    min-width: 200px;
+  }
+
+  .step-icon {
+    font-size: 2.5em;
+  }
+
+  .step-card h3 {
+    font-size: 1.2em;
+  }
+}
