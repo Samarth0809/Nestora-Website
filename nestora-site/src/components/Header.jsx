@@ -1,7 +1,12 @@
 import './Header.css';
 import logo from '../assets/logo.svg';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 const Header = () => {
+  const { items, toggleCart } = useContext(CartContext);
+  const count = items.reduce((s, i) => s + (i.qty || 1), 0);
+
   return (
     <header className="header">
       <div className="container">
@@ -26,7 +31,10 @@ const Header = () => {
           </ul>
         </nav>
         <div className="cta">
-          <button>Join as Vendor</button>
+          <button className="vendor-btn">Join as Vendor</button>
+          <button className="cart-btn" aria-label="Open cart" onClick={toggleCart}>
+            🛒<span className="cart-count" aria-hidden>{count}</span>
+          </button>
         </div>
       </div>
     </header>

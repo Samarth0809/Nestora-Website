@@ -50,6 +50,31 @@ const WhyNestora = () => {
             </div>
           ))}
         </div>
+        <div className="comparison">
+          <h3>How Nestora compares</h3>
+          <div className="comparison-grid">
+            <div className="cmp-card">
+              <h4>Nestora</h4>
+              <ul>
+                <li>Vendor-first pricing: predictable subscription, no surprise commissions</li>
+                <li>Local curation: neighbourhood-focused catalog and farmers/vendors</li>
+                <li>Lower delivery distances & carbon footprint</li>
+                <li>Privacy-first: minimal data collection</li>
+                <li>Support for informal vendors and micro-services</li>
+              </ul>
+            </div>
+            <div className="cmp-card">
+              <h4>Typical Fast-Commerce</h4>
+              <ul>
+                <li>High commission fees for vendors</li>
+                <li>Centralized catalogue, less local choice</li>
+                <li>Optimized for speed, sometimes at margin of sustainability</li>
+                <li>Broader data collection for personalization & ads</li>
+                <li>Less focus on vendor livelihood</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

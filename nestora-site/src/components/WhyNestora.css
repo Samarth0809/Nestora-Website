@@ -111,3 +111,13 @@
     font-size: 1.2em;
   }
 }
+
+.comparison { margin-top: 40px; }
+.comparison-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px; }
+.cmp-card { background:#fff; padding:20px; border-radius:10px; box-shadow: 0 8px 20px rgba(11,35,64,0.04); }
+.cmp-card h4 { margin-top:0; color:var(--primary-teal); }
+.cmp-card ul { margin:0; padding-left:18px; color:var(--muted-gray); }
+
+@media (max-width: 768px) {
+  .comparison-grid { grid-template-columns: 1fr; }
+}

@@ -1,5 +1,7 @@
 import Header from './components/Header'
+import CartDrawer from './components/CartDrawer'
 import Home from './components/Home'
+import ProductListing from './components/ProductListing'
 import WhyNestora from './components/WhyNestora'
 import HowItWorks from './components/HowItWorks'
 import TechSecurity from './components/TechSecurity'
@@ -13,8 +15,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Home />
-      <WhyNestora />
+      <CartDrawer />
+  <Home />
+  <ProductListing />
+  <WhyNestora />
       <HowItWorks />
       <TechSecurity />
       <Pricing />
