@@ -22,7 +22,7 @@ const TeamContact = () => {
     },
     {
       name: 'Sahil Deshmukh',
-      title: 'Co-Founder & CMO',
+      title: 'Co-Founder & COO',
       image: sahilImg,
       bio: [
         'Sahil Deshmukh is a creative marketing leader passionate about building brands that connect deeply with people and communities.',
