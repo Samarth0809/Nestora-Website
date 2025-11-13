@@ -1,123 +1,322 @@
 .why-nestora {
-  padding: 80px 0;
-  background-color: var(--white);
+  padding: 96px 0;
+  background: var(--white);
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section-header {
+.why-nestora .intro {
+  max-width: 760px;
+  margin: 0 auto 56px;
   text-align: center;
-  margin-bottom: 60px;
 }
 
-.section-header h2 {
-  font-size: 2.5em;
-  color: var(--primary-teal);
-  margin-bottom: 20px;
+.why-nestora .intro .eyebrow {
+  color: var(--accent-orange);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 12px;
 }
 
-.section-header p {
-  font-size: 1.2em;
+.why-nestora .intro h2 {
+  font-size: clamp(2.2rem, 3.4vw, 3rem);
+  color: var(--primary-navy, #0b2340);
+  margin-bottom: 18px;
+}
+
+.why-nestora .intro p {
+  font-size: 1.1rem;
   color: var(--muted-gray);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-.features-grid {
+.why-nestora .problem-market {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
 }
 
-.feature-card {
-  background-color: #f8f9fa;
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid #e9ecef;
+.why-nestora .problem-card,
+.why-nestora .market-card {
+  background: #f5f9f8;
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid rgba(0, 150, 136, 0.12);
+  box-shadow: 0 18px 40px rgba(11, 35, 64, 0.08);
 }
 
-.feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.feature-icon {
-  font-size: 3em;
-  margin-bottom: 20px;
-}
-
-.feature-card h3 {
-  font-size: 1.4em;
+.why-nestora .problem-card h3,
+.why-nestora .market-card h3 {
+  margin: 0 0 16px;
   color: var(--primary-teal);
-  margin-bottom: 15px;
+  font-size: 1.4rem;
 }
 
-.feature-card p {
-  color: var(--muted-gray);
+.why-nestora .problem-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #425466;
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .features-grid {
-    grid-template-columns: 1fr;
+.why-nestora .market-signals {
+  display: grid;
+  gap: 18px;
+}
+
+.why-nestora .signal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid rgba(0, 150, 136, 0.12);
+  box-shadow: 0 12px 24px rgba(11, 35, 64, 0.06);
+}
+
+.why-nestora .signal strong {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--primary-navy, #0b2340);
+  margin-bottom: 6px;
+}
+
+.why-nestora .signal p {
+  margin: 0;
+  color: #425466;
+  line-height: 1.5;
+}
+
+.why-nestora .solution-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.why-nestora .solution-card {
+  background: #f5f9f8;
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid rgba(0, 150, 136, 0.12);
+  box-shadow: 0 18px 40px rgba(11, 35, 64, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.why-nestora .solution-card:hover {
+  transform: translateY(-6px);
+}
+
+.why-nestora .solution-card h3 {
+  margin: 0 0 12px;
+  color: var(--primary-teal);
+  font-size: 1.4rem;
+}
+
+.why-nestora .solution-blurb {
+  margin: 0 0 16px;
+  color: var(--muted-gray);
+}
+
+.why-nestora .solution-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #425466;
+  line-height: 1.55;
+}
+
+.why-nestora .stats-band {
+  margin: 56px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.why-nestora .stat {
+  background: #eef7f6;
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid rgba(0, 150, 136, 0.16);
+}
+
+.why-nestora .stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #4f6282;
+}
+
+.why-nestora .stat strong {
+  display: block;
+  font-size: 1.3rem;
+  color: var(--primary-navy, #0b2340);
+  margin: 8px 0 4px;
+}
+
+.why-nestora .stat p {
+  margin: 0;
+  color: #4f6282;
+}
+
+.why-nestora .unique-advantages {
+  background: linear-gradient(135deg, rgba(0, 150, 136, 0.08), rgba(255, 107, 53, 0.08));
+  border-radius: 24px;
+  padding: 32px;
+  margin-bottom: 48px;
+}
+
+.why-nestora .unique-advantages h3 {
+  margin: 0 0 16px;
+  color: var(--primary-navy, #0b2340);
+  font-size: 1.6rem;
+}
+
+.why-nestora .unique-advantages ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #314156;
+  line-height: 1.6;
+}
+
+.why-nestora .comparison {
+  background: linear-gradient(135deg, rgba(0, 150, 136, 0.08), rgba(255, 107, 53, 0.08));
+  border-radius: 24px;
+  padding: 32px;
+}
+
+.why-nestora .comparison header {
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.why-nestora .comparison h3 {
+  margin: 0 0 10px;
+  color: var(--primary-navy, #0b2340);
+  font-size: 1.6rem;
+}
+
+.why-nestora .comparison p {
+  margin: 0;
+  color: #425466;
+}
+
+.why-nestora .comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.why-nestora .cmp-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(11, 35, 64, 0.1);
+  box-shadow: 0 16px 32px rgba(11, 35, 64, 0.08);
+}
+
+.why-nestora .cmp-card h4 {
+  margin: 0 0 12px;
+  color: var(--primary-teal);
+}
+
+.why-nestora .cmp-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #4f6282;
+  line-height: 1.55;
+}
+
+.why-nestora .cmp-card.alt h4 {
+  color: #c44c2e;
+}
+
+.why-nestora .mission-callout {
+  margin-top: 48px;
+  background: #0b2340;
+  color: var(--white);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 18px 36px rgba(11, 35, 64, 0.25);
+}
+
+.why-nestora .mission-callout p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.why-nestora .testimonials {
+  margin-top: 60px;
+}
+
+.why-nestora .testimonials h3 {
+  margin-bottom: 24px;
+  font-size: 1.6rem;
+  color: var(--primary-navy, #0b2340);
+}
+
+.why-nestora .testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.why-nestora .testimonials blockquote {
+  background: #f7fbfb;
+  border-left: 4px solid var(--accent-orange);
+  margin: 0;
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(11, 35, 64, 0.06);
+}
+
+.why-nestora .testimonials p {
+  margin: 0 0 16px;
+  color: #314156;
+  line-height: 1.6;
+}
+
+.why-nestora .testimonials footer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #4f6282;
+}
+
+.why-nestora .testimonials footer strong {
+  color: var(--primary-navy, #0b2340);
+}
+
+@media (max-width: 720px) {
+  .why-nestora {
+    padding: 72px 0;
   }
 
-  .section-header h2 {
-    font-size: 2em;
+  .why-nestora .comparison,
+  .why-nestora .unique-advantages {
+    padding: 24px;
   }
 
-  .feature-card {
-    padding: 20px;
+  .why-nestora .mission-callout {
+    padding: 24px;
   }
 }
 
 @media (max-width: 480px) {
-  .why-nestora {
-    padding: 60px 0;
+  .why-nestora .intro p {
+    font-size: 1rem;
   }
 
-  .section-header {
-    margin-bottom: 40px;
+  .why-nestora .problem-card,
+  .why-nestora .market-card,
+  .why-nestora .solution-card {
+    padding: 22px;
   }
 
-  .section-header h2 {
-    font-size: 1.8em;
-  }
-
-  .section-header p {
-    font-size: 1em;
-  }
-
-  .features-grid {
-    gap: 20px;
-  }
-
-  .feature-card {
+  .why-nestora .comparison,
+  .why-nestora .unique-advantages {
     padding: 20px;
   }
 
-  .feature-icon {
-    font-size: 2.5em;
+  .why-nestora .cmp-card {
+    padding: 20px;
   }
-
-  .feature-card h3 {
-    font-size: 1.2em;
-  }
-}
-
-.comparison { margin-top: 40px; }
-.comparison-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px; }
-.cmp-card { background:#fff; padding:20px; border-radius:10px; box-shadow: 0 8px 20px rgba(11,35,64,0.04); }
-.cmp-card h4 { margin-top:0; color:var(--primary-teal); }
-.cmp-card ul { margin:0; padding-left:18px; color:var(--muted-gray); }
-
-@media (max-width: 768px) {
-  .comparison-grid { grid-template-columns: 1fr; }
 }

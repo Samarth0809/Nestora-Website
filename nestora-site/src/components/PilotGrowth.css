@@ -1,190 +1,174 @@
 .pilot-growth {
-  padding: 80px 0;
-  background-color: var(--white);
+  padding: 96px 0;
+  background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
 }
 
-.container {
-  max-width: 1200px;
+.pilot-growth .container {
+  max-width: 1140px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
 }
 
-.section-header {
+.pilot-growth .intro {
   text-align: center;
-  margin-bottom: 60px;
+  max-width: 720px;
+  margin: 0 auto 56px;
 }
 
-.section-header h2 {
-  font-size: 2.5em;
+.pilot-growth .intro .eyebrow {
+  display: inline-block;
+  font-size: 0.9rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent-orange);
+  margin-bottom: 16px;
+}
+
+.pilot-growth .intro h2 {
+  font-size: clamp(2.1rem, 3vw, 2.8rem);
   color: var(--primary-teal);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
-.section-header p {
-  font-size: 1.2em;
+.pilot-growth .intro p {
   color: var(--muted-gray);
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
-.pilot-content {
+.pilot-growth .phase-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-bottom: 48px;
 }
 
-.metrics h3,
-.roadmap h3 {
-  font-size: 1.8em;
+.pilot-growth .phase-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 18px 36px rgba(16, 24, 40, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pilot-growth .phase-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(16, 24, 40, 0.12);
+}
+
+.pilot-growth .phase-card h3 {
+  margin: 0 0 12px;
   color: var(--primary-teal);
-  margin-bottom: 30px;
+  font-size: 1.5rem;
 }
 
-.metrics-grid {
+.pilot-growth .phase-goal {
+  margin: 0 0 18px;
+  color: #425466;
+  line-height: 1.6;
+}
+
+.pilot-growth .phase-card ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #4f6282;
+  line-height: 1.55;
+}
+
+.pilot-growth .metrics-panel {
+  background: rgba(17, 128, 128, 0.08);
+  border-radius: 24px;
+  padding: 32px;
+  border: 1px solid rgba(17, 128, 128, 0.18);
+  margin-bottom: 48px;
+  box-shadow: 0 18px 32px rgba(17, 128, 128, 0.12);
+}
+
+.pilot-growth .metrics-panel h3 {
+  margin: 0 0 20px;
+  color: var(--primary-teal);
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.pilot-growth .metrics-grid {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
-.metric-card {
-  background-color: #f8f9fa;
-  padding: 20px;
-  border-radius: 8px;
-  border-left: 4px solid var(--accent-orange);
+.pilot-growth .metric-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 24px rgba(16, 24, 40, 0.08);
 }
 
-.metric-card h4 {
-  color: var(--primary-teal);
-  margin-bottom: 10px;
-  font-size: 1.1em;
+.pilot-growth .metric-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4f6282;
+  display: block;
+  margin-bottom: 8px;
 }
 
-.metric-card p {
-  color: var(--muted-gray);
-  margin: 0;
-  font-weight: 500;
+.pilot-growth .metric-card strong {
+  font-size: 1.2rem;
+  color: var(--primary-navy, #0b2340);
 }
 
-.roadmap-timeline {
-  position: relative;
-}
-
-.roadmap-timeline::before {
-  content: '';
-  position: absolute;
-  left: 15px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: var(--accent-orange);
-}
-
-.roadmap-item {
-  display: flex;
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.roadmap-item::before {
-  content: '';
-  position: absolute;
-  left: 10px;
-  top: 8px;
-  width: 12px;
-  height: 12px;
-  background-color: var(--accent-orange);
-  border-radius: 50%;
-  border: 2px solid var(--white);
-}
-
-.phase {
-  background-color: var(--primary-teal);
-  color: var(--white);
-  padding: 8px 15px;
+.pilot-growth .growth-advantages {
+  background: #ffffff;
   border-radius: 20px;
-  font-weight: 600;
-  font-size: 0.9em;
-  margin-right: 20px;
-  min-width: 80px;
-  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 18px 36px rgba(16, 24, 40, 0.08);
+  padding: 32px;
 }
 
-.milestone {
-  background-color: #f8f9fa;
-  padding: 15px 20px;
-  border-radius: 8px;
-  flex: 1;
-  color: var(--muted-gray);
-  font-weight: 500;
+.pilot-growth .growth-advantages h3 {
+  margin: 0 0 16px;
+  color: var(--primary-navy, #0b2340);
+  font-size: 1.5rem;
+}
+
+.pilot-growth .growth-advantages ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #314156;
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-  .pilot-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .pilot-growth {
+    padding: 80px 0;
   }
 
-  .roadmap-item {
-    flex-direction: column;
-  }
-
-  .phase {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .section-header h2 {
-    font-size: 2em;
+  .pilot-growth .metrics-panel,
+  .pilot-growth .growth-advantages {
+    padding: 28px;
   }
 }
 
 @media (max-width: 480px) {
   .pilot-growth {
-    padding: 60px 0;
+    padding: 64px 0;
   }
 
-  .section-header {
-    margin-bottom: 40px;
+  .pilot-growth .intro p {
+    font-size: 1rem;
   }
 
-  .section-header h2 {
-    font-size: 1.8em;
+  .pilot-growth .phase-card,
+  .pilot-growth .metrics-panel,
+  .pilot-growth .growth-advantages {
+    padding: 24px;
   }
 
-  .section-header p {
-    font-size: 1em;
-  }
-
-  .pilot-content {
-    gap: 40px;
-  }
-
-  .metrics h3,
-  .roadmap h3 {
-    font-size: 1.4em;
-  }
-
-  .metric-card {
-    padding: 15px;
-  }
-
-  .metric-card h4 {
-    font-size: 1em;
-  }
-
-  .metric-card p {
-    font-size: 0.9em;
-  }
-
-  .roadmap-item {
-    margin-bottom: 20px;
-  }
-
-  .phase {
-    padding: 6px 12px;
-    font-size: 0.8em;
-    min-width: 70px;
-  }
-
-  .milestone {
-    padding: 12px 15px;
-    font-size: 0.9em;
+  .pilot-growth .metric-card {
+    padding: 18px;
   }
 }

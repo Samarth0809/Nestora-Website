@@ -60,32 +60,19 @@
   color: var(--primary-teal);
 }
 
-.cta button {
+.vendor-btn {
   background-color: var(--accent-orange);
-}
-
-.cta button:hover {
-  background-color: var(--primary-teal);
-}
-
-.cart-btn {
-  margin-left: 12px;
-  background: transparent;
-  border: none;
-  font-size: 18px;
-  position: relative;
-  cursor: pointer;
-}
-
-.cart-count {
-  background: var(--accent-orange);
   color: var(--white);
-  font-size: 12px;
-  padding: 2px 6px;
+  border: none;
+  padding: 12px 22px;
   border-radius: 999px;
-  position: absolute;
-  top: -6px;
-  right: -10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.vendor-btn:hover {
+  background-color: var(--primary-teal);
 }
 
 @media (max-width: 768px) {

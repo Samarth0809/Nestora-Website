@@ -7,7 +7,7 @@ const TeamContact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission
-    alert('Thank you for your interest! We will get back to you soon.');
+    alert('Thank you for your interest! Our team will reach out to you within 24 hours.');
   };
 
   const founders = [
@@ -40,12 +40,20 @@ const TeamContact = () => {
     }
   ];
 
+  const contact = {
+    name: 'Ankit Thakur',
+    role: 'Founder & CEO',
+    phone: '+91 7400450001',
+    email: 'ankitsthakurl71@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/ankit-thakur-018881290/'
+  };
+
   return (
     <section id="team-contact" className="team-contact">
       <div className="container">
         <div className="section-header">
           <h2>Team & Contact</h2>
-          <p>Join the Nestora ecosystem and be part of the neighbourhood revolution</p>
+          <p>Empowering kiranas to thrive in the quick-commerce era with transparent, fair distribution.</p>
         </div>
 
         <div className="team-contact-content">
@@ -71,6 +79,29 @@ const TeamContact = () => {
               ))}
             </div>
 
+
+                                <div className="investor-contact" aria-label="Investor and media contact details">
+                                  <h4>Investor &amp; Media Contact</h4>
+                                  <p className="positioning">Revolutionizing distribution with fair and transparent market pricing.</p>
+                                  <ul>
+                                    <li><strong>{contact.name}</strong> — {contact.role}</li>
+                                    <li>Phone: <a href={`tel:${contact.phone.replace(/\s+/g, '')}`}>{contact.phone}</a></li>
+                                    <li>Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></li>
+                              <div className="location">
+                                <h4>Location</h4>
+                                <p>Mumbai, India</p>
+                                <p>Headquartered in the heart of India&apos;s commercial capital</p>
+                              </div>
+
+                                    <li>
+                                      LinkedIn: <a href={contact.linkedin} target="_blank" rel="noreferrer">{contact.linkedin}</a>
+                                    </li>
+                                  </ul>
+                                  <div className="vision-note">
+                                    We are determined to bring kiranas into the future of quick commerce — building micro-inventories that
+                                    serve regional needs while keeping local commerce in local hands.
+                                  </div>
+                                </div>
             <div className="location">
               <h4>Location</h4>
               <p>Mumbai, India</p>
