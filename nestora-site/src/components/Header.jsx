@@ -26,6 +26,7 @@ const Header = () => {
         </nav>
         <div className="cta">
           <button className="vendor-btn">Request the Deck</button>
+          <div className="mobile-title">Nestora</div>
         </div>
       </div>
     </header>

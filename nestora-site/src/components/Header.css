@@ -82,4 +82,21 @@
   .container {
     padding: 0 15px;
   }
+  /* On small screens, hide the CTA button and show a bold site title instead */
+  .vendor-btn {
+    display: none;
+  }
+  .mobile-title {
+    display: block;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: var(--primary-teal);
+    margin-left: 12px;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Desktop: keep mobile-title hidden */
+.mobile-title {
+  display: none;
 }
