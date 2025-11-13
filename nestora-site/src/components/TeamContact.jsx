@@ -79,72 +79,65 @@ const TeamContact = () => {
               ))}
             </div>
 
+            <div className="investor-contact" aria-label="Investor and media contact details">
+              <h4>Investor &amp; Media Contact</h4>
+              <p className="positioning">Revolutionizing distribution with fair and transparent market pricing.</p>
+              <ul>
+                <li><strong>{contact.name}</strong> — {contact.role}</li>
+                <li>Phone: <a href={`tel:${contact.phone.replace(/\s+/g, '')}`}>{contact.phone}</a></li>
+                <li>Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></li>
+                <li>
+                  LinkedIn: <a href={contact.linkedin} target="_blank" rel="noreferrer">{contact.linkedin}</a>
+                </li>
+              </ul>
+              <div className="vision-note">
+                We are determined to bring kiranas into the future of quick commerce — building micro-inventories that
+                serve regional needs while keeping local commerce in local hands.
+              </div>
+            </div>
 
-                                <div className="investor-contact" aria-label="Investor and media contact details">
-                                  <h4>Investor &amp; Media Contact</h4>
-                                  <p className="positioning">Revolutionizing distribution with fair and transparent market pricing.</p>
-                                  <ul>
-                                    <li><strong>{contact.name}</strong> — {contact.role}</li>
-                                    <li>Phone: <a href={`tel:${contact.phone.replace(/\s+/g, '')}`}>{contact.phone}</a></li>
-                                    <li>Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></li>
-                              <div className="location">
-                                <h4>Location</h4>
-                                <p>Mumbai, India</p>
-                                <p>Headquartered in the heart of India&apos;s commercial capital</p>
-                              </div>
-
-                                    <li>
-                                      LinkedIn: <a href={contact.linkedin} target="_blank" rel="noreferrer">{contact.linkedin}</a>
-                                    </li>
-                                  </ul>
-                                  <div className="vision-note">
-                                    We are determined to bring kiranas into the future of quick commerce — building micro-inventories that
-                                    serve regional needs while keeping local commerce in local hands.
-                                  </div>
-                                </div>
             <div className="location">
               <h4>Location</h4>
               <p>Mumbai, India</p>
               <p>Headquartered in the heart of India's commercial capital</p>
             </div>
           </div>
-        </div>
 
-        {/* Contact form moved below the team section to be full width within the container */}
-        <aside className="contact-form" aria-labelledby="join-vendor">
-          <h3 id="join-vendor">Join as Vendor</h3>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="name">Full Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="email">Email Address</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="business">Business Type</label>
-              <select id="business" name="business" required>
-                <option value="">Select your business type</option>
-                <option value="grocery">Grocery Store</option>
-                <option value="restaurant">Restaurant</option>
-                <option value="laundry">Laundry Service</option>
-                <option value="tailor">Tailor</option>
-                <option value="electrician">Electrician</option>
-                <option value="other">Other Services</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="location">Location (City/Area)</label>
-              <input type="text" id="location" name="location" required />
-            </div>
-            <div className="form-group">
-              <label htmlFor="message">Message (Optional)</label>
-              <textarea id="message" name="message" rows="4" placeholder="Tell us about your business..."></textarea>
-            </div>
-            <button type="submit" className="submit-btn">Submit Application</button>
-          </form>
-        </aside>
+          <aside className="contact-form" aria-labelledby="join-vendor">
+            <h3 id="join-vendor">Join as Vendor</h3>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="name">Full Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="email">Email Address</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="business">Business Type</label>
+                <select id="business" name="business" required>
+                  <option value="">Select your business type</option>
+                  <option value="grocery">Grocery Store</option>
+                  <option value="restaurant">Restaurant</option>
+                  <option value="laundry">Laundry Service</option>
+                  <option value="tailor">Tailor</option>
+                  <option value="electrician">Electrician</option>
+                  <option value="other">Other Services</option>
+                </select>
+              </div>
+              <div className="form-group">
+                <label htmlFor="location">Location (City/Area)</label>
+                <input type="text" id="location" name="location" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="message">Message (Optional)</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us about your business..."></textarea>
+              </div>
+              <button type="submit" className="submit-btn">Submit Application</button>
+            </form>
+          </aside>
+        </div>
       </div>
     </section>
   );

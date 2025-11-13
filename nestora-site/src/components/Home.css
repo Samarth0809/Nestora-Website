@@ -13,6 +13,13 @@
   align-items: stretch;
 }
 
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
 .hero-copy h1 {
   font-size: clamp(2.6rem, 4vw, 3.6rem);
   line-height: 1.05;
@@ -29,7 +36,6 @@
 .hero-lede {
   font-size: 1.2rem;
   line-height: 1.65;
-  margin-bottom: 28px;
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -37,7 +43,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 24px;
 }
 
 .cta {
@@ -76,7 +81,7 @@
   padding: 0;
   margin: 0;
   display: grid;
-  gap: 10px;
+  gap: 12px;
   max-width: 520px;
 }
 
@@ -211,8 +216,8 @@
 .pitch-outline {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 28px;
-  padding: 32px;
-  margin-bottom: 48px;
+  padding: 32px 36px;
+  margin-bottom: 56px;
   color: var(--white);
 }
 
@@ -277,94 +282,94 @@
   color: var(--accent-orange);
 }
 
-.onboarding-strip {
-  margin: 24px auto 60px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
-  padding: 24px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 20px;
-  align-items: center;
-}
-
-.strip-copy h2 {
-  margin: 0 0 6px;
-  font-size: 1.4rem;
-}
-
-.strip-copy p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.workflow-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.chip {
-  background: rgba(255, 255, 255, 0.16);
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.01em;
-}
-
-.product-preview {
+.build-highlights {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 28px;
-  padding: 32px;
+  padding: 36px;
+  margin: 0 auto 64px;
   color: var(--white);
+  box-shadow: 0 34px 70px rgba(2, 32, 58, 0.32);
 }
 
-.preview-header {
+.build-header {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 16px;
+  margin-bottom: 28px;
 }
 
-.preview-header .section-title {
+.build-header .section-title {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.75rem;
 }
 
-.preview-header .muted {
-  color: rgba(255, 255, 255, 0.7);
+.build-header .muted {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.75);
 }
 
-.preview-header .link {
-  color: var(--white);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.preview-header .link:hover {
-  text-decoration: underline;
-}
-
-.products-grid {
+.build-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.build-card {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 22px;
+  padding: 22px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 220px;
+}
+
+.build-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.build-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+.build-status {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--accent-orange);
+  background: rgba(255, 107, 53, 0.14);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
+    gap: 44px;
   }
 
   .hero-visual {
     order: -1;
+    justify-content: flex-start;
   }
 
-  .onboarding-strip {
-    grid-template-columns: 1fr;
+  .hero-card {
+    margin: 0 auto;
+  }
+
+  .outline-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
@@ -381,12 +386,25 @@
     max-width: 100%;
   }
 
-  .product-preview {
-    padding: 24px;
+  .pitch-outline {
+    padding: 26px;
   }
 
-  .pitch-outline {
-    padding: 24px;
+  .build-highlights {
+    padding: 28px;
+  }
+
+  .hero-copy {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-points {
+    text-align: left;
+  }
+
+  .hero-stats {
+    gap: 12px;
   }
 }
 
@@ -401,5 +419,9 @@
 
   .hero-flow li {
     grid-template-columns: 28px 1fr;
+  }
+
+  .build-card {
+    padding: 20px;
   }
 }
