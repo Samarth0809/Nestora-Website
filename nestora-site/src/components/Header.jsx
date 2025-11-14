@@ -26,7 +26,7 @@ const Header = () => {
             <li><a href="#why-nestora">Why Nestora</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#tech-security">Tech & Security</a></li>
-            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#pricing">Business Model</a></li>
             <li><a href="#pilot-growth">Pilot & Growth</a></li>
             <li><a href="#team-contact">Team & Contact</a></li>
           </ul>
@@ -49,7 +49,7 @@ const Header = () => {
               <li><a href="#why-nestora" onClick={()=>setMobileOpen(false)}>Why Nestora</a></li>
               <li><a href="#how-it-works" onClick={()=>setMobileOpen(false)}>How It Works</a></li>
               <li><a href="#tech-security" onClick={()=>setMobileOpen(false)}>Tech & Security</a></li>
-              <li><a href="#pricing" onClick={()=>setMobileOpen(false)}>Pricing</a></li>
+              <li><a href="#pricing" onClick={()=>setMobileOpen(false)}>Business Model</a></li>
               <li><a href="#pilot-growth" onClick={()=>setMobileOpen(false)}>Pilot & Growth</a></li>
               <li><a href="#team-contact" onClick={()=>setMobileOpen(false)}>Team & Contact</a></li>
             </ul>
