@@ -5,6 +5,7 @@ import ContactForm from './ContactForm';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header className="header">
@@ -16,6 +17,7 @@ const Header = () => {
             ) : (
               <h1>Nestora</h1>
             )}
+            <span className="mobile-title">Nestora</span>
           </a>
         </div>
         <nav className="nav">
@@ -29,9 +31,33 @@ const Header = () => {
             <li><a href="#team-contact">Team & Contact</a></li>
           </ul>
         </nav>
-        <div className="cta">
-          <button className="vendor-btn" onClick={()=>setOpen(true)}>Request the Deck</button>
-        </div>
+        <button
+          className={`hamburger ${mobileOpen ? 'open' : ''}`}
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((v) => !v)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        {mobileOpen && (
+          <div className="mobile-nav" role="menu">
+            <ul>
+              <li><a href="#home" onClick={()=>setMobileOpen(false)}>Home</a></li>
+              <li><a href="#why-nestora" onClick={()=>setMobileOpen(false)}>Why Nestora</a></li>
+              <li><a href="#how-it-works" onClick={()=>setMobileOpen(false)}>How It Works</a></li>
+              <li><a href="#tech-security" onClick={()=>setMobileOpen(false)}>Tech & Security</a></li>
+              <li><a href="#pricing" onClick={()=>setMobileOpen(false)}>Pricing</a></li>
+              <li><a href="#pilot-growth" onClick={()=>setMobileOpen(false)}>Pilot & Growth</a></li>
+              <li><a href="#team-contact" onClick={()=>setMobileOpen(false)}>Team & Contact</a></li>
+            </ul>
+          </div>
+        )}
+        {/* <div className="cta">
+          <button className="vendor-btn" onClick={()=>setOpen(true)}>Enquiry Form</button>
+        </div> */}
         {open && <ContactForm onClose={()=>setOpen(false)} />}
       </div>
     </header>

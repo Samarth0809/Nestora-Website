@@ -104,7 +104,7 @@ const TeamContact = () => {
           </div>
 
           <aside className="contact-form" aria-labelledby="join-vendor">
-            <h3 id="join-vendor">Join as Vendor</h3>
+            <h3 id="join-vendor">Let's Connect</h3>
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Full Name</label>

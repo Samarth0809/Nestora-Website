@@ -59,6 +59,10 @@
   padding: 0;
 }
 
+/* hide mobile-specific controls by default */
+.hamburger { display: none; }
+.mobile-nav { display: none; }
+
 .nav a {
   color: var(--muted-gray);
   font-weight: 500;
@@ -92,6 +96,8 @@
   .container {
     padding: 0 15px;
   }
+  /* push hamburger to far right */
+  .hamburger { margin-left: auto; }
   /* On small screens, hide the CTA button and show a bold site title instead */
   .vendor-btn {
     display: none;
@@ -99,11 +105,53 @@
   .mobile-title {
     display: block;
     font-weight: 800;
-    font-size: 1.05rem;
+    font-size: 1.40rem;
     color: var(--primary-teal);
     margin-left: 12px;
     letter-spacing: 0.02em;
   }
+
+  /* Hamburger button visible on mobile */
+  .hamburger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-left: 0;
+    cursor: pointer;
+  }
+  .hamburger span {
+    display: block;
+    height: 2px;
+    background: var(--muted-gray);
+    border-radius: 2px;
+    transition: transform 180ms ease, opacity 180ms ease, background 180ms ease;
+  }
+  .hamburger.open span { background: var(--primary-teal); }
+  .hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+  /* Mobile menu (dropdown) */
+  .mobile-nav {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 70px;
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-100);
+    z-index: 1200;
+    padding: 12px 16px 20px;
+    box-shadow: 0 10px 30px rgba(16,24,40,0.08);
+  }
+  .mobile-nav ul { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+  .mobile-nav a { color: var(--gray-800); text-decoration: none; padding: 10px 6px; display: block; font-weight: 600; }
+  .mobile-nav a:hover { color: var(--primary-teal); }
 }
 
 /* Desktop: keep mobile-title hidden */

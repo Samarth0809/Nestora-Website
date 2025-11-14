@@ -11,6 +11,7 @@
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   gap: 56px;
   align-items: stretch;
+  align-items: center;
 }
 
 .hero-copy {
@@ -19,6 +20,8 @@
   gap: 20px;
   align-items: flex-start;
 }
+
+.hero-copy { max-width: 720px; }
 
 .hero-copy h1 {
   font-size: clamp(2.6rem, 4vw, 3.6rem);
@@ -109,6 +112,43 @@
   justify-content: center;
 }
 
+.hero-stickers {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.sticker {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  color: var(--white);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+  animation: float 6s ease-in-out infinite;
+}
+
+.sticker-speed { align-self: flex-end; animation-delay: 0s; }
+.sticker-kirana { align-self: flex-start; animation-delay: 0.8s; }
+.sticker-fair { align-self: center; animation-delay: 1.4s; }
+
+/* Desktop: position stickers visually to the right of hero copy */
+@media (min-width: 1100px) {
+  .hero-stickers {
+    position: absolute;
+    right: 6vw;
+    top: 36%;
+    transform: translateY(-50%);
+    align-items: flex-end;
+    width: 220px;
+    z-index: 5;
+  }
+  .hero-stickers .sticker { width: auto; }
+}
+
 .hero-card {
   background: rgba(10, 31, 52, 0.72);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -120,6 +160,10 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+
+.floating-card {
+  animation: float 7s ease-in-out infinite;
 }
 
 .hero-card header h3 {
@@ -140,6 +184,11 @@
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.pill-icon {
+  gap: 6px;
+  align-items: center;
 }
 
 .hero-flow {
@@ -352,6 +401,11 @@
   letter-spacing: 0.02em;
 }
 
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -365,6 +419,16 @@
 
   .hero-card {
     margin: 0 auto;
+  }
+
+  .hero-stickers {
+    order: 2;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: static;
+    transform: none;
   }
 
   .outline-header {
@@ -399,6 +463,10 @@
     align-items: center;
   }
 
+  .home-economics ul {
+    padding-left: 1.2rem;
+  }
+
   .hero-points {
     text-align: left;
   }
@@ -424,4 +492,20 @@
   .build-card {
     padding: 20px;
   }
+}
+
+/* Compact layout for very small screens: single-column outlines and build cards */
+@media (max-width: 480px) {
+  .outline-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .outline-card {
+    padding: 14px 16px;
+  }
+  .build-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .build-card { min-height: auto; }
 }

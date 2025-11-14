@@ -1,42 +1,25 @@
 import './Pricing.css';
 
-const plans = [
+const revenuePoints = [
   {
-    name: 'Starter',
-    price: '₹999',
-    period: 'per month',
-    tagline: 'Digitize shelves & activate expiry shield',
-    features: [
-      'POS setup + inventory scanning (up to 500 SKUs)',
-      'Expiry validation workflow & QR shelf labels',
-      'Bilingual staff training & 24x7 helpline',
-      'Daily sales & low-stock alerts via WhatsApp'
-    ]
+    title: 'Platform fee',
+    body: '₹9 on orders under ₹199, ₹15 on orders ₹199 and above.'
   },
   {
-    name: 'Growth',
-    price: '₹1,499',
-    period: 'per month',
-    tagline: 'Analytics & marketplace growth engine',
-    highlight: 'Most adopted',
-    features: [
-      'Everything in Starter',
-      'ClickHouse analytics dashboard & SKU recommendations',
-      'Runner app integration + OSRM routing',
-      'Automated payouts & settlement reconciliation'
-    ]
+    title: 'Delivery fee',
+    body: '₹20–25 within 3 km, ₹30 beyond.'
   },
   {
-    name: 'Scale',
-    price: '₹2,499',
-    period: 'per month',
-    tagline: 'For multi-store & regional rollouts',
-    features: [
-      'Everything in Growth',
-      'Fraud detection signals & GPS spoofing guard',
-      'Regional sharding & multi-city support',
-      'Dedicated account partner + co-marketing funds'
-    ]
+    title: 'Consumer plans',
+    body: 'Subscriptions at ₹199 / ₹99 that provide 1–3 months of free delivery for frequent shoppers.'
+  },
+  {
+    title: 'Kirana revenue share',
+    body: '5–7% of monthly GMV after a scale threshold (e.g., 1000+ orders).' 
+  },
+  {
+    title: 'Scale contribution note',
+    body: 'At ~₹300 AOV and 1000 orders/day per cluster, contribution turns positive — every extra order improves profitability.'
   }
 ];
 
@@ -45,52 +28,29 @@ const Pricing = () => {
     <section id="pricing" className="pricing">
       <div className="container">
         <div className="intro">
-          <span className="eyebrow">Pricing</span>
-          <h2>Zero commissions. Keep every rupee of margin.</h2>
-          <p>Choose a predictable subscription that unlocks digitization, expiry safety, and analytics for your cluster.</p>
-          <div className="guarantee">30-day pilot available • Cancel anytime • Hardware financing on request</div>
+          <span className="eyebrow">Business Model</span>
+          <h2>How Nestora makes money</h2>
+          <p>We follow a predictable, diversified revenue approach that aligns incentives with store profitability — not per‑transaction extraction.</p>
         </div>
 
-        <div className="pricing-grid">
-          {plans.map((plan) => (
-            <article key={plan.name} className={`pricing-card ${plan.highlight ? 'highlight' : ''}`}>
-              {plan.highlight && <span className="plan-badge">{plan.highlight}</span>}
-              <header>
-                <h3>{plan.name}</h3>
-                <p>{plan.tagline}</p>
-              </header>
-              <div className="price">
-                <span className="amount">{plan.price}</span>
-                <span className="period">{plan.period}</span>
-              </div>
-              <ul>
-                {plan.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
-              <a href="#team-contact" className="plan-cta">Start 30-day pilot</a>
+        <div className="pricing-grid revenue-grid">
+          {revenuePoints.map((p) => (
+            <article key={p.title} className="revenue-card">
+              <h3>{p.title}</h3>
+              <p>{p.body}</p>
             </article>
           ))}
         </div>
 
         <div className="roi">
           <div className="roi-card">
-            <h3>ROI snapshot</h3>
-            <p><strong>₹15k</strong> average monthly uplift per store after 90 days of going live with Nestora.</p>
-            <ul>
-              <li>Expiry refunds down by 38%</li>
-              <li>Repeat order frequency up 2.1×</li>
-              <li>Staff hours saved: 18 hrs/month via automated logs</li>
-            </ul>
+            <h3>Aligned incentives</h3>
+            <p>Our revenue approach aligns with store profitability — Nestora grows when stores keep margin and sell more.</p>
           </div>
           <div className="roi-card alt">
-            <h3>All plans include</h3>
-            <ul>
-              <li>Zero commission marketplace access</li>
-              <li>Runner & vendor apps with OTP security</li>
-              <li>Local field manager & community events</li>
-              <li>Analytics exports for investors & lenders</li>
-            </ul>
+            <h3>Want the deep model?</h3>
+            <p>Request the investor deck or pilot plan and we’ll walk through unit economics, sample store P&L, and uplift scenarios.</p>
+            <a href="#team-contact" className="plan-cta">Request the Deck</a>
           </div>
         </div>
       </div>

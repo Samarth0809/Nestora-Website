@@ -57,6 +57,31 @@
   margin-bottom: 64px;
 }
 
+/* Revenue grid (used for 'How Nestora makes money') */
+.revenue-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 56px;
+}
+
+.revenue-card {
+  background: var(--white);
+  border: 1px solid rgba(16,24,40,0.06);
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 12px 28px rgba(16,24,40,0.06);
+}
+
+.revenue-card h3 {
+  color: var(--primary-teal);
+  margin-bottom: 10px;
+}
+
+.revenue-card p {
+  color: var(--muted-gray);
+  line-height: 1.6;
+}
+
 .pricing-card {
   background: var(--white);
   border: 1px solid rgba(0, 0, 0, 0.05);

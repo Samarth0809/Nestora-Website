@@ -50,7 +50,7 @@ function FooterContact() {
   const [open, setOpen] = useState(false);
   return (
     <div>
-      <button className="cta-button" onClick={()=>setOpen(s=>!s)}>{open ? 'Close' : 'Request the Deck'}</button>
+      <button className="cta-button" onClick={()=>setOpen(s=>!s)}>{open ? 'Close' : 'Enquiry Form'}</button>
       {open && <ContactForm inline={true} onClose={()=>setOpen(false)} />}
     </div>
   );
