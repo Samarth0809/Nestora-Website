@@ -1,4 +1,6 @@
 import './Footer.css';
+import { useState } from 'react';
+import ContactForm from './ContactForm';
 
 const Footer = () => {
   return (
@@ -29,9 +31,9 @@ const Footer = () => {
           </div>
           <div className="footer-section">
             <h4>Connect</h4>
-            <p>Email: <a href="mailto:Founders.nestora@gmail.com">Founders.nestora@gmail.com</a></p>
+            <p>Email: <a href="mailto:founders.towntap@gmail.com">founders.towntap@gmail.com</a></p>
             <p>Location: Mumbai, India</p>
-            <a href="#team-contact" className="cta-button">Join as Vendor</a>
+            <FooterContact />
           </div>
         </div>
         <div className="footer-bottom">
@@ -43,3 +45,13 @@ const Footer = () => {
 };
 
 export default Footer;
+
+function FooterContact() {
+  const [open, setOpen] = useState(false);
+  return (
+    <div>
+      <button className="cta-button" onClick={()=>setOpen(s=>!s)}>{open ? 'Close' : 'Request the Deck'}</button>
+      {open && <ContactForm inline={true} onClose={()=>setOpen(false)} />}
+    </div>
+  );
+}

@@ -1,6 +1,11 @@
 import './Header.css';
 import logo from '../assets/logo.svg';
+import { useState } from 'react';
+import ContactForm from './ContactForm';
+
 const Header = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="container">
@@ -25,9 +30,9 @@ const Header = () => {
           </ul>
         </nav>
         <div className="cta">
-          <button className="vendor-btn">Request the Deck</button>
-          <div className="mobile-title">Nestora</div>
+          <button className="vendor-btn" onClick={()=>setOpen(true)}>Request the Deck</button>
         </div>
+        {open && <ContactForm onClose={()=>setOpen(false)} />}
       </div>
     </header>
   );
