@@ -124,6 +124,14 @@
     margin-left: 0;
     cursor: pointer;
   }
+  .hamburger:focus {
+    outline: none;
+  }
+  .hamburger:focus-visible {
+    outline: 2px solid rgba(56, 189, 248, 0.65);
+    outline-offset: 6px;
+    border-radius: 4px;
+  }
   .hamburger span {
     display: block;
     height: 2px;
