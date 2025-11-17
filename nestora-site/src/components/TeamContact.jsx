@@ -52,8 +52,14 @@ const TeamContact = () => {
     <section id="team-contact" className="team-contact">
       <div className="container">
         <div className="section-header">
-          <h2>Team & Contact</h2>
-          <p>Empowering kiranas to thrive in the quick-commerce era with transparent, fair distribution.</p>
+          <h2>Team &amp; Contact</h2>
+          <p>Founders, operators, and investors align here. We respond within 24 hours with the right artefacts.</p>
+        </div>
+
+        <div className="cta-strip" role="note">
+          <p>Need the diligence deck, pilot metrics, or a live Q&amp;A?</p>
+          <a href="#final-punchline" className="cta-link">Review the punch line</a>
+          <a href="mailto:ankitsthakurl71@gmail.com" className="cta-link accent">Request access</a>
         </div>
 
         <div className="team-contact-content">
@@ -82,6 +88,7 @@ const TeamContact = () => {
             <div className="investor-contact" aria-label="Investor and media contact details">
               <h4>Investor &amp; Media Contact</h4>
               <p className="positioning">Revolutionizing distribution with fair and transparent market pricing.</p>
+              <p className="turnaround">Deck, model, and diligence data room available on request — we usually turn these around within 12 hours.</p>
               <ul>
                 <li><strong>{contact.name}</strong> — {contact.role}</li>
                 <li>Phone: <a href={`tel:${contact.phone.replace(/\s+/g, '')}`}>{contact.phone}</a></li>
@@ -92,7 +99,8 @@ const TeamContact = () => {
               </ul>
               <div className="vision-note">
                 We are determined to bring kiranas into the future of quick commerce — building micro-inventories that
-                serve regional needs while keeping local commerce in local hands.
+                serve regional needs while keeping local commerce in local hands. Ask us for customer stories, PRDs, or
+                compliance docs — we share everything needed for decision-making.
               </div>
             </div>
 

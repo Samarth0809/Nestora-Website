@@ -1,10 +1,5 @@
 import './WhyNestora.css';
 
-const problemStatements = [
-  'Quick-commerce platforms are rapidly reshaping consumer behaviour, leaving neighbourhood kiranas struggling to compete and risking irrelevance.',
-  'Without an organised, tech-enabled distribution network, kiranas face declining sales, limited market access, and shrinking customer loyalty.'
-];
-
 const marketSignals = [
   { value: '80%', caption: 'Kirana stores report losing business share to quick-commerce platforms — they feel forced to digitise just to stay relevant.' },
   { value: '2 lakh+', caption: 'Neighbourhood shops have already shut as ultra-fast players capture local demand at scale.' },
@@ -12,7 +7,7 @@ const marketSignals = [
   { value: 'Millions at risk', caption: 'If this trend continues, small retailers lose their foothold within the next decade. Now is the time to act.' }
 ];
 
-const solutionTracks = [
+const advantageTracks = [
   {
     title: 'Smart inventory management for kiranas',
     blurb: 'Unified visibility across offline and online sales so stores never lose sight of stock.',
@@ -54,11 +49,17 @@ const momentumStats = [
   { label: '12 languages', value: 'training content', detail: 'Playbooks and support for staff enablement.' }
 ];
 
-const uniqueAdvantages = [
-  'We do not own inventory unlike dark-store models — zero COGS keeps breakeven timelines tight.',
-  'A wide range of partner shops unlocks limitless SKUs tuned to each locality’s needs.',
-  'The kirana economy stands at $600B; 1% share is $6B in GMV, 5% is a $30B opportunity.',
-  'Purpose-built to cover every neighbourhood so local commerce stays in local hands.'
+const advantagesList = [
+  'Predictable subscription pricing keeps kirana margins intact.',
+  'Expiry shield plus tamper-proof handoffs reduce refunds and increase trust.',
+  'Neighbourhood-first logistics beats dark-store ETAs because shelves already sit next door.'
+];
+
+const uniquenessList = [
+  'We never own inventory — an asset-light mesh unlocks faster breakeven and capital efficiency.',
+  'Kirana data remains with the store; Nestora is the infrastructure, not the aggregator.',
+  'Local assortment science + ClickHouse analytics create a defensible moat in every cluster.',
+  'Community-led onboarding in vernacular languages keeps adoption fast and sticky.'
 ];
 
 const testimonials = [
@@ -76,42 +77,20 @@ const testimonials = [
 
 const WhyNestora = () => {
   return (
-    <section id="why-nestora" className="why-nestora">
+    <section id="advantages" className="why-nestora">
       <div className="container">
         <div className="intro">
-          <span className="eyebrow">Why Nestora</span>
-          <h2>Empowering kiranas to thrive in the quick-commerce era.</h2>
+          <span className="eyebrow">Advantages &amp; market position</span>
+          <h2>Why Nestora wins once kiranas run on one OS.</h2>
           <p>
-            If we do not rise with neighbourhood retailers today, billion-dollar corporations will control local commerce
-            tomorrow. Nestora builds the transparent, tech-enabled distribution network that keeps kiranas indispensable
-            and profitable.
+            The Nestora stack brings inventory accuracy, expiry safety, demand generation, and runner orchestration under a single
+            operating system. That alignment compounds into advantages, moats, and a market position that dark-store incumbents
+            cannot easily copy.
           </p>
         </div>
 
-        <div className="problem-market">
-          <article className="problem-card">
-            <h3>Problem Statement</h3>
-            <ul>
-              {problemStatements.map((problem) => (
-                <li key={problem}>{problem}</li>
-              ))}
-            </ul>
-          </article>
-          <article className="market-card">
-            <h3>Market Opportunity</h3>
-            <div className="market-signals">
-              {marketSignals.map((signal) => (
-                <div key={signal.value} className="signal">
-                  <strong>{signal.value}</strong>
-                  <p>{signal.caption}</p>
-                </div>
-              ))}
-            </div>
-          </article>
-        </div>
-
-        <div className="solution-grid">
-          {solutionTracks.map((track) => (
+        <div className="solution-grid" aria-labelledby="advantages-list">
+          {advantageTracks.map((track) => (
             <article key={track.title} className="solution-card">
               <h3>{track.title}</h3>
               <p className="solution-blurb">{track.blurb}</p>
@@ -124,6 +103,38 @@ const WhyNestora = () => {
           ))}
         </div>
 
+        <div className="advantages-uniqueness" id="uniqueness">
+          <div className="adv-card">
+            <h3>Advantages</h3>
+            <ul>
+              {advantagesList.map((adv) => (
+                <li key={adv}>{adv}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="adv-card">
+            <h3>Uniqueness</h3>
+            <ul>
+              {uniquenessList.map((adv) => (
+                <li key={adv}>{adv}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="market-position" id="market-position">
+          <h3>Market position</h3>
+          <p className="market-copy">Quick-commerce demand already exists; Nestora simply re-routes it through kiranas. The market wants the speed of 10-minute apps with the authenticity of local stores — that is the wedge.</p>
+          <div className="market-signals">
+            {marketSignals.map((signal) => (
+              <div key={signal.value} className="signal">
+                <strong>{signal.value}</strong>
+                <p>{signal.caption}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="stats-band">
           {momentumStats.map((stat) => (
             <div key={stat.label} className="stat">
@@ -132,15 +143,6 @@ const WhyNestora = () => {
               <p>{stat.detail}</p>
             </div>
           ))}
-        </div>
-
-        <div className="unique-advantages">
-          <h3>Unique advantages</h3>
-          <ul>
-            {uniqueAdvantages.map((advantage) => (
-              <li key={advantage}>{advantage}</li>
-            ))}
-          </ul>
         </div>
 
         <div className="comparison">

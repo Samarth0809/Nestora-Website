@@ -2,9 +2,9 @@ import Header from './components/Header'
 import Home from './components/Home'
 import WhyNestora from './components/WhyNestora'
 import HowItWorks from './components/HowItWorks'
-import TechSecurity from './components/TechSecurity'
 import Pricing from './components/Pricing'
 import PilotGrowth from './components/PilotGrowth'
+import FinalPunchline from './components/FinalPunchline'
 import TeamContact from './components/TeamContact'
 import Footer from './components/Footer'
 import './App.css'
@@ -18,25 +18,25 @@ function App() {
       {/* 2. Hero section: problem, solution, USP, economics */}
       <Home />
 
-      {/* 3. Why Nestora: market, uniqueness, opportunity */}
-      <WhyNestora />
-
-      {/* 4. How It Works: modules, flow, onboarding */}
+      {/* 3. How we solve it */}
       <HowItWorks />
 
-      {/* 5. Tech & Security: reliability, compliance, infra */}
-      <TechSecurity />
+      {/* 4. Advantages, uniqueness, market position */}
+      <WhyNestora />
 
-      {/* 6. Pricing: consumer plans, kirana fees, revenue share */}
-      <Pricing />
-
-      {/* 7. Pilot & Growth: rollout plan, scale, profitability */}
+      {/* 5. Expansion + future vision */}
       <PilotGrowth />
 
-      {/* 8. Team & Contact: founders, contact form, location */}
+      {/* 6. Financial aspects */}
+      <Pricing />
+
+      {/* 7. Secondary punchline + Deck/Q&A */}
+      <FinalPunchline />
+
+      {/* 8. Team & Contact */}
       <TeamContact />
 
-      {/* 9. Footer: links, final CTA */}
+      {/* 9. Footer */}
       <Footer />
     </div>
   )

@@ -23,12 +23,14 @@ const Header = () => {
         <nav className="nav">
           <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#why-nestora">Why Nestora</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#tech-security">Tech & Security</a></li>
-            <li><a href="#pricing">Business Model</a></li>
-            <li><a href="#pilot-growth">Pilot & Growth</a></li>
-            <li><a href="#team-contact">Team & Contact</a></li>
+                  <li><a href="#what-we-do">What We Do</a></li>
+                  <li><a href="#problem">Problem</a></li>
+                  <li><a href="#how-it-works">How We Solve</a></li>
+                  <li><a href="#advantages">Advantages</a></li>
+                  <li><a href="#market-position">Market Position</a></li>
+                  <li><a href="#expansion">Expansion</a></li>
+                  <li><a href="#financials">Financials</a></li>
+                  <li><a href="#team-contact">Team & Contact</a></li>
           </ul>
         </nav>
         <button
@@ -46,12 +48,14 @@ const Header = () => {
           <div className="mobile-nav" role="menu">
             <ul>
               <li><a href="#home" onClick={()=>setMobileOpen(false)}>Home</a></li>
-              <li><a href="#why-nestora" onClick={()=>setMobileOpen(false)}>Why Nestora</a></li>
-              <li><a href="#how-it-works" onClick={()=>setMobileOpen(false)}>How It Works</a></li>
-              <li><a href="#tech-security" onClick={()=>setMobileOpen(false)}>Tech & Security</a></li>
-              <li><a href="#pricing" onClick={()=>setMobileOpen(false)}>Business Model</a></li>
-              <li><a href="#pilot-growth" onClick={()=>setMobileOpen(false)}>Pilot & Growth</a></li>
-              <li><a href="#team-contact" onClick={()=>setMobileOpen(false)}>Team & Contact</a></li>
+                  <li><a href="#what-we-do" onClick={()=>setMobileOpen(false)}>What We Do</a></li>
+                  <li><a href="#problem" onClick={()=>setMobileOpen(false)}>Problem</a></li>
+                  <li><a href="#how-it-works" onClick={()=>setMobileOpen(false)}>How We Solve</a></li>
+                  <li><a href="#advantages" onClick={()=>setMobileOpen(false)}>Advantages</a></li>
+                  <li><a href="#market-position" onClick={()=>setMobileOpen(false)}>Market Position</a></li>
+                  <li><a href="#expansion" onClick={()=>setMobileOpen(false)}>Expansion</a></li>
+                  <li><a href="#financials" onClick={()=>setMobileOpen(false)}>Financials</a></li>
+                  <li><a href="#team-contact" onClick={()=>setMobileOpen(false)}>Team & Contact</a></li>
             </ul>
           </div>
         )}

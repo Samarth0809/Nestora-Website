@@ -228,6 +228,35 @@
   border-color: rgba(17, 128, 128, 0.2);
 }
 
+.financial-highlights {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.financial-highlights article {
+  background: #101828;
+  color: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 16px 32px rgba(16, 24, 40, 0.3);
+}
+
+.financial-highlights span {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.financial-highlights strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 768px) {
   .pricing {
     padding: 72px 0;

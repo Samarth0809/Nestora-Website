@@ -1,30 +1,15 @@
 import './Home.css';
 
-const pitchOutline = [
-  { number: '01', title: 'Problem Statement', blurb: 'Quick-commerce boom is sidelining neighbourhood kiranas.', href: '#why-nestora' },
-  { number: '02', title: 'Market Opportunity', blurb: 'A $57B quick-commerce wave demands a fair, kirana-first network.', href: '#why-nestora' },
-  { number: '03', title: 'Our Solution', blurb: 'Inventory visibility, expiry safety, and hyperlocal delivery in one OS.', href: '#why-nestora' },
-  { number: '04', title: 'Go-To-Market Strategy', blurb: 'Phased rollout from MVP to nationwide clusters.', href: '#pilot-growth' },
-  { number: '05', title: 'Team', blurb: 'Operators with deep roots in local commerce and technology.', href: '#team-contact' },
-  { number: '06', title: 'Contact Information', blurb: 'Investor hotline and founder access within 24 hours.', href: '#team-contact' }
+const whatWeDoPoints = [
+  'Digitise every neighbourhood kirana so inventory, ordering, and delivery run on one transparent OS.',
+  'Move fulfilment from distant dark stores back to community shelves with tamper-proof, expiry-safe handling.',
+  'Give kiranas the data, financing, and runners they need to compete with 10-minute apps without losing margin.'
 ];
 
-const buildHighlights = [
-  {
-    title: 'Composable architecture ready',
-    detail: 'Event-driven services across inventory, ordering, and routing designed for multi-city rollout.',
-    status: 'Architecture docs & data contracts signed off.'
-  },
-  {
-    title: 'Data & analytics layer',
-    detail: 'ClickHouse pipelines for SKU velocity, expiry risk, and cluster demand heatmaps.',
-    status: 'Instrumentation sprint scheduled for December 2025.'
-  },
-  {
-    title: 'Compliance-first launch',
-    detail: 'Audit logs, OTP auth, and vendor KYB flows gated before first pilot.',
-    status: 'Security checklist in review with advisors.'
-  }
+const problemStatements = [
+  'Quick-commerce platforms trained consumers to expect 10-minute delivery while sidelining neighbourhood kiranas.',
+  'Without digitised inventory and dependable logistics, kiranas are leaking loyalty, basket size, and working capital.',
+  'Citywide dark stores lock up demand and data — neighbourhood commerce risks becoming invisible in its own lane.'
 ];
 
 const Home = () => {
@@ -41,7 +26,7 @@ const Home = () => {
           </p>
           <div className="cta-group">
             <a href="#team-contact" className="cta primary">Book a Local Demo</a>
-            <a href="#pilot-growth" className="cta ghost">See the 18-Month Roadmap</a>
+            <a href="#expansion" className="cta ghost">See the 18-Month Roadmap</a>
           </div>
           <ul className="hero-points">
             <li><strong>Problem:</strong> A ₹600B+ kirana market is losing orders to quick‑commerce apps while most stores stay offline.</li>
@@ -129,39 +114,25 @@ const Home = () => {
         </div>
       </div> */}
 
-      <div className="container pitch-outline">
-        <div className="outline-header">
-          <span className="eyebrow">Pitch Deck</span>
-          {/* <div>
-            <h2>Contents</h2>
-            <p className="outline-lede">Every section mirrors the investor brief — problem, market, solution, GTM, team, and contact.</p>
-          </div> */}
-        </div>
-        <div className="outline-grid" role="list">
-          {pitchOutline.map((item) => (
-            <a key={item.number} href={item.href} className="outline-card" role="listitem">
-              <span className="outline-number">{item.number}</span>
-              <h3>{item.title}</h3>
-              <p>{item.blurb}</p>
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div className="container build-highlights">
-        <div className="build-header">
-          <h2 className="section-title">Build highlights</h2>
-          <p className="muted">What we are shipping ahead of the first on-ground pilot.</p>
-        </div>
-        <div className="build-grid">
-          {buildHighlights.map((item) => (
-            <article key={item.title} className="build-card">
-              <h3>{item.title}</h3>
-              <p>{item.detail}</p>
-              <span className="build-status">{item.status}</span>
-            </article>
-          ))}
-        </div>
+      <div className="container overview-grid" id="what-we-do">
+        <article className="overview-card">
+          <span className="eyebrow">What we are doing</span>
+          <h2>Turning every kirana into a 10-minute node.</h2>
+          <ul>
+            {whatWeDoPoints.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        </article>
+        <article className="overview-card" id="problem">
+          <span className="eyebrow">What the problem is</span>
+          <h2>Kirana demand is leaking to far-away dark stores.</h2>
+          <ul>
+            {problemStatements.map((statement) => (
+              <li key={statement}>{statement}</li>
+            ))}
+          </ul>
+        </article>
       </div>
     </section>
   );

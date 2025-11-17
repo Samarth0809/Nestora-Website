@@ -262,143 +262,36 @@
   color: rgba(255, 255, 255, 0.78);
 }
 
-.pitch-outline {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
-  padding: 32px 36px;
-  margin-bottom: 56px;
-  color: var(--white);
-}
 
-.outline-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.outline-header h2 {
-  margin: 0;
-  font-size: 1.8rem;
-}
-
-.outline-lede {
-  margin: 4px 0 0;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 420px;
-}
-
-.outline-grid {
+.overview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin: 56px auto 32px;
 }
 
-.outline-card {
-  display: block;
-  background: rgba(0, 0, 0, 0.16);
-  border-radius: 20px;
-  padding: 18px 20px;
-  text-decoration: none;
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: transform 0.2s ease, background 0.2s ease;
+.overview-card {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 24px;
+  padding: 28px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 26px 52px rgba(2, 32, 58, 0.35);
 }
 
-.outline-card:hover {
-  transform: translateY(-4px);
-  background: rgba(0, 0, 0, 0.26);
-}
-
-.outline-card h3 {
-  margin: 8px 0;
-  font-size: 1.1rem;
-}
-
-.outline-card p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.95rem;
-}
-
-.outline-number {
-  display: inline-block;
-  font-size: 0.8rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--accent-orange);
-}
-
-.build-highlights {
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 28px;
-  padding: 36px;
-  margin: 0 auto 64px;
-  color: var(--white);
-  box-shadow: 0 34px 70px rgba(2, 32, 58, 0.32);
-}
-
-.build-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 28px;
-}
-
-.build-header .section-title {
-  margin: 0;
+.overview-card h2 {
+  margin: 10px 0 18px;
   font-size: 1.75rem;
 }
 
-.build-header .muted {
+.overview-card ul {
   margin: 0;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.build-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.build-card {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 22px;
-  padding: 22px 24px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-height: 220px;
-}
-
-.build-card h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.build-card p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.78);
+  padding-left: 20px;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
 }
 
-.build-status {
-  margin-top: auto;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
-  color: var(--accent-orange);
-  background: rgba(255, 107, 53, 0.14);
-  border-radius: 999px;
-  padding: 6px 14px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+.overview-card li + li {
+  margin-top: 10px;
 }
 
 @keyframes float {
@@ -431,10 +324,6 @@
     transform: none;
   }
 
-  .outline-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 
 @media (max-width: 720px) {
@@ -450,12 +339,8 @@
     max-width: 100%;
   }
 
-  .pitch-outline {
-    padding: 26px;
-  }
-
-  .build-highlights {
-    padding: 28px;
+  .overview-grid {
+    grid-template-columns: 1fr;
   }
 
   .hero-copy {
@@ -489,23 +374,13 @@
     grid-template-columns: 28px 1fr;
   }
 
-  .build-card {
-    padding: 20px;
+  .overview-card {
+    padding: 24px;
   }
 }
 
-/* Compact layout for very small screens: single-column outlines and build cards */
 @media (max-width: 480px) {
-  .outline-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
+  .overview-card {
+    padding: 20px;
   }
-  .outline-card {
-    padding: 14px 16px;
-  }
-  .build-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .build-card { min-height: auto; }
 }

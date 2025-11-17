@@ -39,9 +39,9 @@ const HowItWorks = () => {
     <section id="how-it-works" className="how-it-works">
       <div className="container">
         <div className="intro">
-          <span className="eyebrow">Product build</span>
-          <h2>Shipping the digital rails before we go on-ground.</h2>
-          <p>Every sprint prioritises platform readiness — so when field operations kick off, kiranas plug into a stable, auditable OS.</p>
+          <span className="eyebrow">How we are solving it</span>
+          <h2>The Nestora OS stitches inventory, expiry safety, and runners together.</h2>
+          <p>Each module launches in sequence so kiranas get a dependable operating layer the moment we step on-ground.</p>
         </div>
 
         <div className="workflow-grid">

@@ -23,14 +23,21 @@ const revenuePoints = [
   }
 ];
 
+const financialHighlights = [
+  { label: 'Cluster breakeven', value: '< 6 months once 1k orders/day at ₹300 AOV' },
+  { label: 'Gross margin', value: '18–22% after brand credits + Nestora fee' },
+  { label: 'Capex per store', value: '< ₹20k (hardware + onboarding) financed via NBFC partners' },
+  { label: 'Working capital cycle', value: '20 days due to supplier credit + daily consumer settlements' }
+];
+
 const Pricing = () => {
   return (
-    <section id="pricing" className="pricing">
+    <section id="financials" className="pricing">
       <div className="container">
         <div className="intro">
-          <span className="eyebrow">Business Model</span>
-          <h2>How Nestora makes money</h2>
-          <p>We follow a predictable, diversified revenue approach that aligns incentives with store profitability — not per‑transaction extraction.</p>
+          <span className="eyebrow">Financial model</span>
+          <h2>Resilient revenue + disciplined unit economics</h2>
+          <p>Multiple income streams keep contribution positive while protecting kirana margin. Nestora’s financial guardrails focus on rapid payback per cluster.</p>
         </div>
 
         <div className="pricing-grid revenue-grid">
@@ -52,6 +59,15 @@ const Pricing = () => {
             <p>Request the investor deck or pilot plan and we’ll walk through unit economics, sample store P&L, and uplift scenarios.</p>
             <a href="#team-contact" className="plan-cta">Request the Deck</a>
           </div>
+        </div>
+
+        <div className="financial-highlights">
+          {financialHighlights.map((item) => (
+            <article key={item.label}>
+              <span>{item.label}</span>
+              <strong>{item.value}</strong>
+            </article>
+          ))}
         </div>
       </div>
     </section>

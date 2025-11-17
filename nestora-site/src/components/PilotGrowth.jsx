@@ -44,16 +44,23 @@ const uniqueAdvantages = [
   'Nestora’s transparent pricing and expiry-safe promise power a defensible community moat.'
 ];
 
+const futureVision = [
+  'Create the largest kirana-led fulfilment mesh across Tier 1–3 cities.',
+  'Plug lenders and FMCG partners into live store data so capital and assortment flow instantly.',
+  'Expand Nestora OS modules into other neighbourhood services — pharmacies, salons, local makers.',
+  'Turn every cluster into a living digital twin so planners can predict demand and reduce waste.'
+];
+
 const PilotGrowth = () => {
   return (
-    <section id="pilot-growth" className="pilot-growth">
+    <section id="expansion" className="pilot-growth">
       <div className="container">
         <div className="intro">
-          <span className="eyebrow">Go-to-market strategy</span>
-          <h2>From MVP to nationwide kirana empowerment.</h2>
+          <span className="eyebrow">Expansion &amp; future vision</span>
+          <h2>Deliberate rollouts turn clusters into a nationwide kirana rail.</h2>
           <p>
-            We scale in deliberate waves — proving the model in one cluster, amplifying demand with community-led
-            marketing, then expanding into every tier of the country while keeping kiranas at the centre of the quick-commerce era.
+            We build depth before breadth: prove the model inside one cluster, amplify demand through community marketing,
+            then expand into every tier of the country while keeping kiranas at the centre of the quick-commerce era.
           </p>
         </div>
 
@@ -88,6 +95,16 @@ const PilotGrowth = () => {
           <ul>
             {uniqueAdvantages.map((advantage) => (
               <li key={advantage}>{advantage}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="future-vision">
+          <h3>Future vision of Nestora</h3>
+          <p>The Nestora OS becomes civic infrastructure for neighbourhood commerce — a dependable rail open to every small business.</p>
+          <ul>
+            {futureVision.map((item) => (
+              <li key={item}>{item}</li>
             ))}
           </ul>
         </div>
