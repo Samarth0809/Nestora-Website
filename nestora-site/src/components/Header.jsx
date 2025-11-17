@@ -1,10 +1,8 @@
 import './Header.css';
 import logo from '../assets/logo.svg';
 import { useState } from 'react';
-import ContactForm from './ContactForm';
 
 const Header = () => {
-  const [open, setOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -59,10 +57,6 @@ const Header = () => {
             </ul>
           </div>
         )}
-        {/* <div className="cta">
-          <button className="vendor-btn" onClick={()=>setOpen(true)}>Enquiry Form</button>
-        </div> */}
-        {open && <ContactForm onClose={()=>setOpen(false)} />}
       </div>
     </header>
   );

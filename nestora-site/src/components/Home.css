@@ -1,6 +1,6 @@
 .home {
-  background: linear-gradient(135deg, #02203a 0%, rgba(0, 150, 136, 0.92) 100%);
-  color: var(--white);
+  background: linear-gradient(135deg, #fdfefe 0%, #e3f4ff 100%);
+  color: #0f172a;
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
@@ -29,17 +29,17 @@
   margin: 12px 0 20px;
 }
 
-.eyebrow {
+.home .eyebrow {
   font-size: 0.95rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--accent-orange);
 }
 
 .hero-lede {
   font-size: 1.2rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.9);
+  color: #475569;
 }
 
 .cta-group {
@@ -70,13 +70,13 @@
 }
 
 .cta.ghost {
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(15, 23, 42, 0.05);
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.15);
 }
 
 .cta.ghost:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.1);
 }
 
 .hero-points {
@@ -95,7 +95,11 @@
   position: relative;
   padding-left: 22px;
   font-size: 0.98rem;
-  color: rgba(255, 255, 255, 0.85);
+  color: #334155;
+}
+
+.hero-points li strong {
+  color: #0f172a;
 }
 
 .hero-points li::before {
@@ -121,13 +125,13 @@
 }
 
 .sticker {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(15, 23, 42, 0.08);
   border-radius: 999px;
   padding: 6px 14px;
   font-size: 0.78rem;
-  color: var(--white);
+  color: #0f172a;
   backdrop-filter: blur(4px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.15);
   animation: float 6s ease-in-out infinite;
 }
 
@@ -150,13 +154,13 @@
 }
 
 .hero-card {
-  background: rgba(10, 31, 52, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 24px;
   padding: 28px;
   width: 100%;
   max-width: 420px;
-  box-shadow: 0 32px 60px rgba(2, 32, 58, 0.42);
+  box-shadow: 0 32px 60px rgba(15, 23, 42, 0.12);
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -172,7 +176,7 @@
 }
 
 .hero-card header p {
-  color: rgba(255, 255, 255, 0.75);
+  color: #475569;
   margin: 0;
 }
 
@@ -180,7 +184,8 @@
   display: inline-flex;
   padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(56, 189, 248, 0.15);
+  color: #0f172a;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -204,7 +209,7 @@
   grid-template-columns: 32px 1fr;
   gap: 12px;
   align-items: center;
-  background: rgba(0, 0, 0, 0.14);
+  background: rgba(15, 23, 42, 0.05);
   border-radius: 16px;
   padding: 10px 14px;
 }
@@ -215,14 +220,14 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(15, 23, 42, 0.08);
   font-weight: 600;
 }
 
 .hero-flow p {
   margin: 0;
   font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.72);
+  color: #475569;
 }
 
 .hero-card footer {
@@ -232,7 +237,7 @@
 }
 
 .badge {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(15, 23, 42, 0.08);
   border-radius: 999px;
   padding: 6px 12px;
   font-size: 0.76rem;
@@ -246,10 +251,12 @@
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.08);
+  background: #ffffff;
   border-radius: 18px;
   padding: 18px;
   text-align: left;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 22px 40px rgba(15, 23, 42, 0.08);
 }
 
 .stat-card h3 {
@@ -259,7 +266,7 @@
 
 .stat-card p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.78);
+  color: #475569;
 }
 
 
@@ -271,11 +278,11 @@
 }
 
 .overview-card {
-  background: rgba(0, 0, 0, 0.18);
+  background: #ffffff;
   border-radius: 24px;
   padding: 28px 30px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 26px 52px rgba(2, 32, 58, 0.35);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 26px 52px rgba(15, 23, 42, 0.08);
 }
 
 .overview-card h2 {
@@ -286,7 +293,7 @@
 .overview-card ul {
   margin: 0;
   padding-left: 20px;
-  color: rgba(255, 255, 255, 0.85);
+  color: #334155;
   line-height: 1.6;
 }
 

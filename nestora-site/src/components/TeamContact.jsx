@@ -1,13 +1,80 @@
+import { useState } from 'react';
 import './TeamContact.css';
 import ankitImg from '../assets/ankit_profile.jpeg';
 import sahilImg from '../assets/sahil_profile.jpeg';
 import samarthImg from '../assets/samarth_profile.png';
 
+const initialFormState = {
+  name: '',
+  email: '',
+  org: '',
+  message: ''
+};
+
 const TeamContact = () => {
-  const handleSubmit = (e) => {
+  const [formData, setFormData] = useState(initialFormState);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [emailed, setEmailed] = useState(false);
+
+  const resetFlow = (clearForm = false) => {
+    setSent(false);
+    setEmailed(false);
+    setError('');
+    if (clearForm) {
+      setFormData(initialFormState);
+    }
+  };
+
+  const updateField = (field) => (e) => {
+    const value = e.target.value;
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const validate = () => {
+    if (!formData.name.trim()) return 'Please enter your name';
+    if (!formData.email.trim() || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(formData.email)) return 'Please enter a valid email';
+    return '';
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    alert('Thank you for your interest! Our team will reach out to you within 24 hours.');
+    const validationMessage = validate();
+    if (validationMessage) {
+      setError(validationMessage);
+      return;
+    }
+    setError('');
+    setLoading(true);
+    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:4000';
+    try {
+      const res = await fetch(`${API_BASE}/api/contact`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          org: formData.org,
+          message: formData.message,
+          source: 'team-contact'
+        })
+      });
+      if (!res.ok) {
+        const text = await res.text().catch(() => null);
+        throw new Error(text || 'Network response was not ok');
+      }
+      const payload = await res.json().catch(() => ({}));
+      setSent(true);
+      setEmailed(!!payload.emailed);
+      setLoading(false);
+      setFormData(initialFormState);
+    } catch (err) {
+      setLoading(false);
+      setError('Submission failed — your request was saved locally. You can also use your mail client.');
+      setSent(true);
+      setEmailed(false);
+    }
   };
 
   const founders = [
@@ -113,37 +180,45 @@ const TeamContact = () => {
 
           <aside className="contact-form" aria-labelledby="join-vendor">
             <h3 id="join-vendor">Let's Connect</h3>
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="name">Full Name</label>
-                <input type="text" id="name" name="name" required />
+            {sent ? (
+              <div className="form-feedback" aria-live="polite">
+                {emailed ? (
+                  <>
+                    <p>Thank you — we received your request and emailed the deck. Expect a follow-up within 24 hours.</p>
+                    <button type="button" className="submit-btn" onClick={() => resetFlow(true)}>Send another</button>
+                  </>
+                ) : (
+                  <>
+                    <p>Thanks — your request was saved locally. If email delivery failed, you can send it via your email client.</p>
+                    <MailtoButton {...formData} />
+                    <button type="button" className="submit-btn" onClick={() => resetFlow(false)}>
+                      Try again
+                    </button>
+                  </>
+                )}
               </div>
-              <div className="form-group">
-                <label htmlFor="email">Email Address</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="business">Business Type</label>
-                <select id="business" name="business" required>
-                  <option value="">Select your business type</option>
-                  <option value="grocery">Grocery Store</option>
-                  <option value="restaurant">Restaurant</option>
-                  <option value="laundry">Laundry Service</option>
-                  <option value="tailor">Tailor</option>
-                  <option value="electrician">Electrician</option>
-                  <option value="other">Other Services</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <label htmlFor="location">Location (City/Area)</label>
-                <input type="text" id="location" name="location" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="message">Message (Optional)</label>
-                <textarea id="message" name="message" rows="4" placeholder="Tell us about your business..."></textarea>
-              </div>
-              <button type="submit" className="submit-btn">Submit Application</button>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="name">Full Name</label>
+                  <input type="text" id="name" name="name" value={formData.name} onChange={updateField('name')} required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email Address</label>
+                  <input type="email" id="email" name="email" value={formData.email} onChange={updateField('email')} required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="org">Organization (optional)</label>
+                  <input type="text" id="org" name="org" value={formData.org} onChange={updateField('org')} placeholder="Company / neighbourhood" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message">Message (Optional)</label>
+                  <textarea id="message" name="message" rows="4" placeholder="Tell us about your business..." value={formData.message} onChange={updateField('message')}></textarea>
+                </div>
+                {error && <div className="form-error" role="alert">{error}</div>}
+                <button type="submit" className="submit-btn" disabled={loading}>{loading ? 'Sending...' : 'Submit Application'}</button>
+              </form>
+            )}
           </aside>
         </div>
       </div>
@@ -152,3 +227,14 @@ const TeamContact = () => {
 };
 
 export default TeamContact;
+
+const MailtoButton = ({ name, email, org, message }) => {
+  const subject = encodeURIComponent('Nestora partnership request');
+  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nOrganization: ${org}\n\nMessage:\n${message}`);
+  const href = `mailto:founders.towntap@gmail.com?subject=${subject}&body=${body}`;
+  return (
+    <a href={href} className="mailto-btn" target="_blank" rel="noreferrer">
+      Send via email client
+    </a>
+  );
+};
