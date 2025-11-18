@@ -236,8 +236,8 @@
 }
 
 .financial-highlights article {
-  background: #101828;
-  color: #ffffff;
+  background: rgba(17, 128, 128, 0.08);
+  color: var(--off-black);
   border-radius: 14px;
   padding: 20px;
   box-shadow: 0 16px 32px rgba(16, 24, 40, 0.3);

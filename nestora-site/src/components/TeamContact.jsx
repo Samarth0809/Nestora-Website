@@ -47,9 +47,12 @@ const TeamContact = () => {
     }
     setError('');
     setLoading(true);
-    const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:4000';
+    const apiBase = (
+      import.meta.env.VITE_API_BASE || (import.meta.env.DEV ? 'http://localhost:4000' : '')
+    ).trim().replace(/\/$/, '');
+    const requestUrl = apiBase ? `${apiBase}/api/contact` : '/api/contact';
     try {
-      const res = await fetch(`${API_BASE}/api/contact`, {
+      const res = await fetch(requestUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -69,7 +72,8 @@ const TeamContact = () => {
       setEmailed(!!payload.emailed);
       setLoading(false);
       setFormData(initialFormState);
-    } catch (err) {
+    } catch (error) {
+      console.error('TeamContact submission failed', error);
       setLoading(false);
       setError('Submission failed — your request was saved locally. You can also use your mail client.');
       setSent(true);

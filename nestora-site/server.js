@@ -45,7 +45,7 @@ app.post('/api/contact', async (req, res) => {
     if (!name || !email) return res.status(400).json({ error: 'name and email are required' });
     const entry = { id: Date.now(), name, email, org: org || '', message: message || '', createdAt: new Date().toISOString() };
     let existing = [];
-    try { existing = JSON.parse(await fs.readFile(DATA_FILE, 'utf8') || '[]'); } catch (e) { existing = []; }
+    try { existing = JSON.parse(await fs.readFile(DATA_FILE, 'utf8') || '[]'); } catch (_err) { existing = []; }
     existing.push(entry);
     await fs.writeFile(DATA_FILE, JSON.stringify(existing, null, 2), 'utf8');
     console.log('Saved contact', entry);

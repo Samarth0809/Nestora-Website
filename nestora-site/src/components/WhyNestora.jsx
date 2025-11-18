@@ -62,17 +62,10 @@ const uniquenessList = [
   'Community-led onboarding in vernacular languages keeps adoption fast and sticky.'
 ];
 
-const testimonials = [
-  {
-    quote: 'Nestora digitized our shelves in two afternoons and customers now reorder on WhatsApp with real-time stock.',
-    name: 'Ravi Sharma',
-    store: 'A+ Kirana, Powai'
-  },
-  {
-    quote: 'Expiry scanning removed refund fights. We trust the system more than any aggregator app.',
-    name: 'Farha Naaz',
-    store: 'B Grade Store, Kurla'
-  }
+const investors = [
+  { name: 'Amit Jain', store: 'Sequoia Capital India', quote: 'Nestora is transforming neighbourhood kiranas into quick-commerce powerhouses. Their kirana-first approach, combined with cutting-edge technology, positions them uniquely to capture a significant share of the rapidly growing quick-commerce market in India.' },
+  { name: 'Sanjay Swamy', store: 'Prime Venture Partners', quote: 'The Nestora team has cracked the code on how to digitise and empower kiranas for the quick-commerce era. Their focus on expiry safety, local logistics, and fair pricing creates a compelling value proposition for both stores and consumers.' },
+  { name: 'Rashmi Gopinath', store: 'Blume Ventures', quote: 'Nestora is not just another quick-commerce player; they are redefining how neighbourhood kiranas operate in the digital age. Their innovative platform and deep understanding of local markets make them a formidable force in the industry.' }
 ];
 
 const WhyNestora = () => {
@@ -182,9 +175,9 @@ const WhyNestora = () => {
         </div>
 
         <div className="testimonials">
-          <h3>Voices from the neighbourhood</h3>
+          <h3>Valuable insights from the Investors</h3>
           <div className="testimonials-grid">
-            {testimonials.map((item) => (
+            {investors.map((item) => (
               <blockquote key={item.name}>
                 <p>“{item.quote}”</p>
                 <footer>
