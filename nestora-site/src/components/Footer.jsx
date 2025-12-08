@@ -1,11 +1,15 @@
 import './Footer.css';
+import logo from '../assets/logo.png';
+
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Nestora</h3>
+            <div className="footer-logo">
+              <img src={logo} alt="Nestora logo" className="footer-site-logo" />
+            </div>
             <p>The Local OS for Neighbourhoods</p>
             <p>Connecting customers, vendors, and delivery partners in a trusted hyperlocal ecosystem.</p>
           </div>
