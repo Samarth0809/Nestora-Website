@@ -22,7 +22,7 @@ const SMTP_PORT = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : undefi
 const SMTP_USER = process.env.SMTP_USER;
 const SMTP_PASS = process.env.SMTP_PASS;
 const SMTP_SECURE = process.env.SMTP_SECURE === 'true';
-const TO_EMAIL = process.env.TO_EMAIL || 'founders.towntap@gmail.com';
+const TO_EMAIL = process.env.TO_EMAIL || 'nestora.privatelimited@gmail.com';
 
 let transporter = null;
 if (SMTP_HOST && SMTP_USER) {

@@ -224,17 +224,16 @@
 
 .why-nestora .mission-callout {
   margin-top: 48px;
-  background: #cedbf8;
-  color: var(--white);
-  border-radius: 20px;
-  padding: 28px;
-  box-shadow: 0 18px 36px rgba(11, 35, 64, 0.25);
+  text-align: center;
+  padding: 0;
 }
 
 .why-nestora .mission-callout p {
   margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--primary-navy, #0b2340);
 }
 
 .why-nestora .testimonials {
@@ -290,7 +289,7 @@
   }
 
   .why-nestora .mission-callout {
-    padding: 24px;
+    padding: 0;
   }
 }
 

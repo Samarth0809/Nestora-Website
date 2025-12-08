@@ -235,7 +235,7 @@ export default TeamContact;
 const MailtoButton = ({ name, email, org, message }) => {
   const subject = encodeURIComponent('Nestora partnership request');
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nOrganization: ${org}\n\nMessage:\n${message}`);
-  const href = `mailto:founders.towntap@gmail.com?subject=${subject}&body=${body}`;
+  const href = `mailto:nestora.privatelimited@gmail.com?subject=${subject}&body=${body}`;
   return (
     <a href={href} className="mailto-btn" target="_blank" rel="noreferrer">
       Send via email client

@@ -40,7 +40,7 @@ const pilotMetrics = [
 const uniqueAdvantages = [
   'We do not hold inventory — no dark-store COGS, faster breakeven, and capital-light growth.',
   'Neighbourhood variety unlocks unlimited SKUs so every micro-market gets exactly what it needs.',
-  'The kirana economy is a $600B opportunity: a 1% share unlocks $6B, 5% equals $30B in GMV.',
+  'Acquiring 1% of this market: $6B opportunity.',
   'Nestora’s transparent pricing and expiry-safe promise power a defensible community moat.'
 ];
 

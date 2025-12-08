@@ -37,7 +37,7 @@ const Pricing = () => {
         <div className="intro">
           <span className="eyebrow">Financial model</span>
           <h2>Resilient revenue + disciplined unit economics</h2>
-          <p>Multiple income streams keep contribution positive while protecting kirana margin. Nestora’s financial guardrails focus on rapid payback per cluster.</p>
+          <p>Projected revenue + unit economics add multiple income streams keep contribution positive while protecting kirana margin. Nestora's financial guardrails focus on rapid payback per cluster.</p>
         </div>
 
         <div className="pricing-grid revenue-grid">

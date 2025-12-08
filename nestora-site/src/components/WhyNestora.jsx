@@ -8,38 +8,38 @@ const marketSignals = [
 ];
 
 const advantageTracks = [
-  {
-    title: 'Smart inventory management for kiranas',
-    blurb: 'Unified visibility across offline and online sales so stores never lose sight of stock.',
-    bullets: [
-      'Real-time sync solves the toughest digitisation challenge — inventory accuracy.',
-      'Automated reminders and analytics prevent stockouts, overstocking, or expired goods.'
-    ]
-  },
-  {
-    title: 'Fast, tamper-free, hyperlocal delivery',
-    blurb: 'Proximity-based runner network delivers within 7–10 minutes from the kirana down the lane.',
-    bullets: [
-      'Tamper-proof handoffs and hygienic packaging match billion-dollar quick-commerce benchmarks.',
-      'Expiry validation embedded in dispatch keeps every order customer-safe.'
-    ]
-  },
-  {
-    title: 'Fair pricing & inclusive market network',
-    blurb: 'Transparent subscriptions, no commissions, and equitable access for Tier-2 and Tier-3 markets.',
-    bullets: [
-      'Predictable pricing protects kirana margins and restores community trust.',
-      'Local assortment planning keeps neighbourhood favourites always available.'
-    ]
-  },
-  {
-    title: 'Expanding local empowerment beyond kiranas',
-    blurb: 'A distribution fabric that scales to every neighbourhood business, not just grocers.',
-    bullets: [
-      'Extends to electronics shops, vegetable vendors, restaurants, and service providers.',
-      'Builds self-sufficient communities that can serve customers within minutes.'
-    ]
-  }
+  // {
+  //   title: 'Smart inventory management for kiranas',
+  //   blurb: 'Unified visibility across offline and online sales so stores never lose sight of stock.',
+  //   bullets: [
+  //     'Real-time sync solves the toughest digitisation challenge — inventory accuracy.',
+  //     'Automated reminders and analytics prevent stockouts, overstocking, or expired goods.'
+  //   ]
+  // },
+  // {
+  //   title: 'Fast, tamper-free, hyperlocal delivery',
+  //   blurb: 'Proximity-based runner network delivers within 7–10 minutes from the kirana down the lane.',
+  //   bullets: [
+  //     'Tamper-proof handoffs and hygienic packaging match billion-dollar quick-commerce benchmarks.',
+  //     'Expiry validation embedded in dispatch keeps every order customer-safe.'
+  //   ]
+  // },
+  // {
+  //   title: 'Fair pricing & inclusive market network',
+  //   blurb: 'Transparent subscriptions, no commissions, and equitable access for Tier-2 and Tier-3 markets.',
+  //   bullets: [
+  //     'Predictable pricing protects kirana margins and restores community trust.',
+  //     'Local assortment planning keeps neighbourhood favourites always available.'
+  //   ]
+  // },
+  // {
+  //   title: 'Expanding local empowerment beyond kiranas',
+  //   blurb: 'A distribution fabric that scales to every neighbourhood business, not just grocers.',
+  //   bullets: [
+  //     'Extends to electronics shops, vegetable vendors, restaurants, and service providers.',
+  //     'Builds self-sufficient communities that can serve customers within minutes.'
+  //   ]
+  // }
 ];
 
 const momentumStats = [

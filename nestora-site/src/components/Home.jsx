@@ -18,7 +18,8 @@ const Home = () => {
       {/* <div className="container hero-grid"> */}
       <div className="container">
         <div className="hero-copy">
-          <span className="eyebrow">Quick commerce for the kiranas, not against them</span>
+          
+          <span className="eyebrow"> NESTORA - Quick commerce for the kiranas, not against them</span>
           <h1>Bringing local kiranas into the quick‑commerce fold — profitably.</h1>
           <p className="hero-lede">
             Quick‑commerce giants have trained customers to expect 10‑minute delivery, but left neighbourhood kiranas outside the game.
@@ -28,11 +29,11 @@ const Home = () => {
             <a href="#team-contact" className="cta primary">Book a Local Demo</a>
             <a href="#expansion" className="cta ghost">See the 18-Month Roadmap</a>
           </div>
-          <ul className="hero-points">
+          {/* <ul className="hero-points">
             <li><strong>Problem:</strong> A ₹600B+ kirana market is losing orders to quick‑commerce apps while most stores stay offline.</li>
             <li><strong>Our solution:</strong> A kirana‑first quick‑commerce OS — expiry‑safe inventory, tamper‑proof delivery, online + offline billing, and CRM in one platform.</li>
             <li><strong>What others don’t do:</strong> Giants run dark stores and own inventory. We turn existing kirana clusters into a networked, asset‑light dark‑store alternative, closer to every doorstep.</li>
-          </ul>
+          </ul> */}
         </div>
         <div className="hero-stickers" aria-hidden="true">
           <div className="sticker sticker-speed">7–10 min delivery</div>

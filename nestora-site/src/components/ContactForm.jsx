@@ -105,7 +105,7 @@ export default ContactForm;
 function MailtoButton({ name, email, org, message }) {
   const subject = encodeURIComponent('Request: Nestora Deck');
   const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nOrg: ${org}\n\nMessage:\n${message}`);
-  const mailto = `mailto:founders.towntap@gmail.com?subject=${subject}&body=${body}`;
+  const mailto = `mailto:nestora.privatelimited@gmail.com?subject=${subject}&body=${body}`;
   return (
     <div style={{marginTop:8}}>
       <a href={mailto} className="primary cta-link" style={{padding:'0.5rem 0.75rem',display:'inline-block',borderRadius:6,textDecoration:'none'}}>Send via email client</a>

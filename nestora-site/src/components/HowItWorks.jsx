@@ -44,7 +44,7 @@ const HowItWorks = () => {
           <p>Each module launches in sequence so kiranas get a dependable operating layer the moment we step on-ground.</p>
         </div>
 
-        <div className="workflow-grid">
+        {/* <div className="workflow-grid">
           {modules.map((module) => (
             <article key={module.id} className="workflow-card">
               <header>
@@ -58,9 +58,9 @@ const HowItWorks = () => {
               </div>
             </article>
           ))}
-        </div>
+        </div> */}
 
-        <div className="enablement">
+        {/* <div className="enablement">
           <div className="story">
             <h3>What we finish before field deployment.</h3>
             <p>
@@ -97,7 +97,7 @@ const HowItWorks = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
