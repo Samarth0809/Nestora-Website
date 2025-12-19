@@ -13,27 +13,37 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Brand palette (Nestora / projectimp) */
-  --primary-teal: #1a237e; /* Primary Navy (kept existing var name for compatibility) */
-  --primary-navy: #1a237e;
-  --primary-light: #3949ab;
-  --accent-orange: #ff7043;
-  --accent-hover: #ff5722;
-  --success-green: #10b981;
-  --danger-red: #ff5722;
-  --gold: #ffd700;
+  /* Brand palette (Nestora - Aqua Blue Theme) */
+  --primary-aqua: #00BCD4;
+  --primary-dark: #006064;
+  --primary-light: #E0F7FA;
+  --primary-teal: #00838F;
+  --primary-navy: #006064;
+  --accent-orange: #FF6E40;
+  --accent-hover: #FF3D00;
+  --success-green: #00C853;
+  --danger-red: #D50000;
+  --gold: #FFD700;
   --white: #ffffff;
   --header-height: 70px;
   /* Neutral grays (from light to dark) */
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-300: #d1d5db;
-  --muted-gray: #6b7280; /* mapped to project neutral */
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
+  --gray-50: #F8FAFC;
+  --gray-100: #F1F5F9;
+  --gray-200: #E2E8F0;
+  --gray-300: #CBD5E1;
+  --muted-gray: #64748B;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1E293B;
+  --gray-900: #0F172A;
+
+  /* Animation Variables */
+  --transition-speed: 0.3s;
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.3);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
 
 * {
@@ -46,6 +56,149 @@ body {
   min-height: 100vh;
   /* keep scroll offset in sync with fixed header height */
   scroll-padding-top: var(--header-height);
+  background-color: var(--gray-50);
+  color: var(--gray-900);
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(189,100%,96%,1) 0, transparent 50%), 
+    radial-gradient(at 100% 0%, hsla(189,100%,96%,1) 0, transparent 50%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-aqua) 0%, var(--primary-teal) 100%);
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.5s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.4);
+}
+
+.btn-primary:hover::after {
+  left: 100%;
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--primary-dark);
+  border: 2px solid var(--gray-100);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary-aqua);
+  color: var(--primary-aqua);
+  background: var(--gray-50);
+}
+
+/* Card Styles */
+.card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-speed);
+  border: none;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-aqua) 0%, var(--primary-teal) 100%);
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4);
+}
+
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--primary-teal);
+  border: 2px solid var(--primary-light);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary-aqua);
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
 }
 
 /* Ensure every main section uses consistent vertical spacing */
@@ -71,6 +224,20 @@ a {
 }
 a:hover {
   color: var(--accent-hover);
+}
+
+/* Keep button text color stable on hover (override generic link hover) */
+.btn:hover,
+.btn:focus {
+  color: inherit;
+}
+
+/* Explicitly preserve primary/secondary button text colors */
+.btn-primary:hover {
+  color: var(--white);
+}
+.btn-secondary:hover {
+  color: var(--primary-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {

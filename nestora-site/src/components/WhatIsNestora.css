@@ -1,0 +1,32 @@
+.what-is-section {
+  background-color: var(--white);
+  text-align: center;
+  padding: 80px 0;
+}
+
+.what-is-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.what-is-content h2 {
+  font-size: 2.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 30px;
+}
+
+.lead-text {
+  font-size: 1.5rem;
+  color: var(--gray-800);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.what-is-content p {
+  font-size: 1.2rem;
+  color: var(--gray-600);
+}
+
+.what-is-content strong {
+  color: var(--primary-aqua);
+}

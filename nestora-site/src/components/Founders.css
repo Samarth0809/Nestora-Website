@@ -1,0 +1,76 @@
+.founders-section {
+  background-color: var(--white);
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+.founder-card {
+  text-align: center;
+  padding: 20px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.founder-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 188, 212, 0.15);
+}
+
+.founder-image-wrapper {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--primary-aqua);
+  padding: 4px; /* Space between border and image */
+  background: var(--white);
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.2);
+}
+
+.founder-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+}
+
+.founder-card:hover .founder-image {
+  transform: scale(1.1);
+}
+
+.founder-info {
+  padding: 0 10px;
+}
+
+.founder-info h3 {
+  color: var(--primary-dark);
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+
+.founder-role {
+  display: block;
+  color: var(--primary-aqua);
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.founder-bio {
+  color: var(--gray-600);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

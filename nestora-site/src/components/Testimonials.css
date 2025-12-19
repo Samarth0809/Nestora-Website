@@ -1,0 +1,44 @@
+.testimonials-section {
+  background-color: var(--gray-50);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-light);
+  margin-bottom: 20px;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  color: var(--gray-600);
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.testimonial-author h4 {
+  color: var(--primary-dark);
+  margin-bottom: 5px;
+}
+
+.testimonial-author span {
+  color: var(--muted-gray);
+  font-size: 0.9rem;
+}

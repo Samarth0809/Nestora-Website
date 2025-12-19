@@ -1,0 +1,61 @@
+.market-section {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-navy) 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.market-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.market-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle-chart {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 8px solid var(--primary-aqua);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+}
+
+.chart-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.market-stat p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--primary-light);
+}
+
+.market-divider {
+  width: 2px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .market-divider {
+    display: none;
+  }
+  .market-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+}

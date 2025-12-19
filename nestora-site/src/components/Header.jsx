@@ -21,14 +21,12 @@ const Header = () => {
         <nav className="nav">
           <ul>
             <li><a href="#home">Home</a></li>
-                  <li><a href="#what-we-do">What We Do</a></li>
-                  <li><a href="#problem">Problem</a></li>
-                  <li><a href="#how-it-works">How We Solve</a></li>
-                  <li><a href="#advantages">Advantages</a></li>
-                  <li><a href="#market-position">Market Position</a></li>
-                  <li><a href="#expansion">Expansion</a></li>
-                  <li><a href="#financials">Financials</a></li>
-                  <li><a href="#team-contact">Team & Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#problem">Problem</a></li>
+            <li><a href="#solution">Solution</a></li>
+            <li><a href="#market">Market</a></li>
+            <li><a href="#founders">Team</a></li>
+            <li><a href="#contact" className="btn btn-primary nav-cta">Contact Us</a></li>
           </ul>
         </nav>
         <button
@@ -46,14 +44,12 @@ const Header = () => {
           <div className="mobile-nav" role="menu">
             <ul>
               <li><a href="#home" onClick={()=>setMobileOpen(false)}>Home</a></li>
-                  <li><a href="#what-we-do" onClick={()=>setMobileOpen(false)}>What We Do</a></li>
-                  <li><a href="#problem" onClick={()=>setMobileOpen(false)}>Problem</a></li>
-                  <li><a href="#how-it-works" onClick={()=>setMobileOpen(false)}>How We Solve</a></li>
-                  <li><a href="#advantages" onClick={()=>setMobileOpen(false)}>Advantages</a></li>
-                  <li><a href="#market-position" onClick={()=>setMobileOpen(false)}>Market Position</a></li>
-                  <li><a href="#expansion" onClick={()=>setMobileOpen(false)}>Expansion</a></li>
-                  <li><a href="#financials" onClick={()=>setMobileOpen(false)}>Financials</a></li>
-                  <li><a href="#team-contact" onClick={()=>setMobileOpen(false)}>Team & Contact</a></li>
+              <li><a href="#about" onClick={()=>setMobileOpen(false)}>About</a></li>
+              <li><a href="#problem" onClick={()=>setMobileOpen(false)}>Problem</a></li>
+              <li><a href="#solution" onClick={()=>setMobileOpen(false)}>Solution</a></li>
+              <li><a href="#market" onClick={()=>setMobileOpen(false)}>Market</a></li>
+              <li><a href="#founders" onClick={()=>setMobileOpen(false)}>Team</a></li>
+              <li><a href="#contact" onClick={()=>setMobileOpen(false)}>Contact Us</a></li>
             </ul>
           </div>
         )}

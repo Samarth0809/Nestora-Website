@@ -65,7 +65,7 @@ const ContactForm = ({ inline = false, onClose }) => {
               <>Thank you — we've received your request and emailed the deck. We'll follow up soon.</>
             ) : (
               <>
-                <p>Thanks — your request was saved. If you didn't receive an email, you can send via your mail client:</p>
+                <p>Thanks — your request was saved. We'll follow up soon. If you don't hear from us within 24 hours, feel free to reach out directly.</p>
                 <MailtoButton name={name} email={email} org={org} message={message} />
               </>
             )}
