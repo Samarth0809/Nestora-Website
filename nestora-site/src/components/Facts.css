@@ -57,6 +57,85 @@
   text-transform: uppercase;
 }
 
+/* Styles for facts rendered inside LogoLoop */
+.fact-loop-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  min-width: 160px;
+}
+
+.facts-loop-container {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.facts-loop-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.fact-loop-item .fact-value {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.fact-loop-item .fact-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.9);
+  text-transform: none;
+}
+
+/* Responsive tweaks for the facts loop */
+@media (max-width: 1024px) {
+  .fact-loop-item {
+    min-width: 140px;
+    padding: 10px 14px;
+  }
+
+  .fact-loop-item .fact-value {
+    font-size: 1.6rem;
+  }
+
+  .fact-loop-item .fact-label {
+    font-size: 0.85rem;
+  }
+
+  .facts-loop-container {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fact-loop-item {
+    min-width: 120px;
+    padding: 8px 12px;
+  }
+
+  .fact-loop-item .fact-value {
+    font-size: 1.4rem;
+  }
+
+  .fact-loop-item .fact-label {
+    font-size: 0.8rem;
+  }
+
+  /* Reduce fade overlays so they don't obscure small screens */
+  .logoloop--fade::before,
+  .logoloop--fade::after {
+    width: clamp(8px, 6%, 32px);
+  }
+
+  .facts-loop-wrapper {
+    padding: 0 8px;
+  }
+}
+
 @media (max-width: 768px) {
   .facts-grid {
     display: flex;

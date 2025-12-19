@@ -49,6 +49,16 @@
   display: none; /* Remove old underline style */
 }
 
+/* Ensure animated child spans inherit the gradient text fill */
+.highlight,
+.highlight * {
+  background: linear-gradient(120deg, var(--primary-aqua), var(--primary-teal));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
 .hero-subtitle {
   font-size: 1.35rem;
   color: var(--gray-600);
