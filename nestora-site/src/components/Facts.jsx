@@ -87,35 +87,3 @@ const Facts = () => {
 
 export default Facts;
 
-    const [loopHeight, setLoopHeight] = useState(80);
-    const [loopGap, setLoopGap] = useState(40);
-    const [loopSpeed, setLoopSpeed] = useState(80);
-
-    useEffect(() => {
-      const updateLoopMetrics = () => {
-        const width = window.innerWidth;
-        let height = 80;
-        let gap = 40;
-        let speed = 80;
-
-        if (width <= 1024) {
-          height = 68;
-          gap = 28;
-          speed = 70;
-        }
-
-        if (width <= 640) {
-          height = 58;
-          gap = 22;
-          speed = 60;
-        }
-
-        setLoopHeight(height);
-        setLoopGap(gap);
-        setLoopSpeed(speed);
-      };
-
-      updateLoopMetrics();
-      window.addEventListener('resize', updateLoopMetrics);
-      return () => window.removeEventListener('resize', updateLoopMetrics);
-    }, []);

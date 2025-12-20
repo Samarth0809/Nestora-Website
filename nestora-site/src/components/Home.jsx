@@ -1,5 +1,5 @@
 import './Home.css';
-import BlurText from './BlurText';
+import TextType from './TextType';
 
 const Home = () => {
   return (
@@ -8,24 +8,20 @@ const Home = () => {
         <div className="hero-content animate-fade-in">
           <span className="eyebrow">The Future of Quick Commerce</span>
           <div className="hero-title">
-            <BlurText 
-              text="The Nearest mini - Warehouse is" 
-              delay={150} 
-              animateBy="words" 
-              direction="top" 
-              className="block"
-            />
-            <BlurText 
-              text="Already Down the Street." 
-              delay={150} 
-              animateBy="words" 
-              direction="top" 
-              className="highlight block"
+            <TextType
+              text="The Nearest mini Warehouse is already Down the Street."
+              typingSpeed={45}
+              pauseDuration={1500}
+              showCursor={false}
+              cursorCharacter="_"
+              className="block highlight"
+              loop={false}
             />
           </div>
           <p className="hero-subtitle">
-            We don't build dark stores. We wake up the sleeping giants of Indian retail: 
-            <strong> The Local Kiranas.</strong><br/>
+            We don't build dark stores. We wake up the sleeping giants of Indian retail:
+            <strong className="text-dark-blue">The Local Kiranas.</strong>
+            <br/>
             With 10-minute delivery for their FMCG products. Zero capital waste. 100% Community driven.
           </p>
           <div className="hero-cta">
