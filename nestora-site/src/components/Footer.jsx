@@ -1,5 +1,5 @@
 import './Footer.css';
-import logo from '../assets/Nestora_Logo.png';
+import logo from '../assets/Nestora_logo.png';
 
 const Footer = () => {
   return (
