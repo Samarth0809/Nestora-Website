@@ -39,6 +39,14 @@
   color: inherit;
 }
 
+.mobile-title{
+  /* display: none; */
+  font-size: 1.4rem;
+  font-weight: 600;
+  /* color: var(--primary-teal); */
+  color: var(--primary-dark);
+}
+
 .site-logo {
   height: 44px;
   width: auto;

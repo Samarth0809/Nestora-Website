@@ -1,4 +1,5 @@
 import './Home.css';
+import TextType from './TextType';
 
 const Home = () => {
   return (
@@ -6,14 +7,22 @@ const Home = () => {
       <div className="container">
         <div className="hero-content animate-fade-in">
           <span className="eyebrow">The Future of Quick Commerce</span>
-          <h1 className="hero-title">
-            The Fastest Warehouse is<br />
-            <span className="highlight">Already Down the Street.</span>
-          </h1>
+          <div className="hero-title">
+            <TextType
+              text="The Nearest mini Warehouse is already Down the Street."
+              typingSpeed={45}
+              pauseDuration={1500}
+              showCursor={false}
+              cursorCharacter="_"
+              className="block highlight"
+              loop={false}
+            />
+          </div>
           <p className="hero-subtitle">
-            We don't build dark stores. We wake up the sleeping giants of Indian retail: 
-            <strong> The Local Kiranas.</strong><br/>
-            10-minute delivery. Zero capital waste. 100% Community driven.
+            We don't build dark stores. We wake up the sleeping giants of Indian retail:
+            <strong className="text-dark-blue">The Local Kiranas.</strong>
+            <br/>
+            With 10-minute delivery for their FMCG products. Zero capital waste. 100% Community driven.
           </p>
           <div className="hero-cta">
             <a href="#contact" className="btn btn-primary">Join the Revolution</a>

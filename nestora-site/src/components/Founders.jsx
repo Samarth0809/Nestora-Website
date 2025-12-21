@@ -8,17 +8,17 @@ const Founders = () => {
   const founders = [
     {
       id: 1,
-      name: 'Ankit',
-      role: 'Founder & CEO',
-      image: ankitImg,
-      bio: 'Visionary leader with a passion for empowering local businesses.',
-    },
-    {
-      id: 2,
       name: 'Sahil',
       role: 'Co-Founder',
       image: sahilImg,
       bio: 'Operations expert ensuring seamless delivery and logistics.',
+    },
+    {
+      id: 2,
+      name: 'Ankit',
+      role: 'Founder & CEO',
+      image: ankitImg,
+      bio: 'Visionary leader with a passion for empowering local businesses.',
     },
     {
       id: 3,
