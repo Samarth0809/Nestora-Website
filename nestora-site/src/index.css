@@ -213,7 +213,8 @@ section {
 
 /* Global container used across components; components may further scope layout (grid/flex) */
 .container {
-  max-width: 1500px;
+  /* max-width: 1500px; */
+  max-width: auto;
   margin: 0 auto;
   padding: 0 20px;
 }
