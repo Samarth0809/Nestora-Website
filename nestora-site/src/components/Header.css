@@ -132,12 +132,23 @@
     justify-content: space-around;
     width: 30px;
     height: 25px;
-    background: transparent;
+    background: transparent !important;
     border: none;
     cursor: pointer;
     padding: 0;
     z-index: 1001;
     margin-left: auto; 
+  }
+
+  /* Remove default tap/focus backgrounds on mobile browsers */
+  .hamburger,
+  .hamburger:focus,
+  .hamburger:active {
+    background-color: transparent !important;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    appearance: none;
+    box-shadow: none;
   }
   
   .hamburger span {
