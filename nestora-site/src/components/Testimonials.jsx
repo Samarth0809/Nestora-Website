@@ -2,29 +2,33 @@ import React from 'react';
 import './Testimonials.css';
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      id: 1,
-      name: 'Rajesh Kumar',
-      role: 'Kirana Owner, Delhi',
-      image: 'https://placehold.co/100x100/00BCD4/ffffff?text=RK',
-      quote: "Since joining Nestora, my daily orders have doubled. I don't have to worry about delivery or expired stock anymore.",
-    },
-    {
-      id: 2,
-      name: 'Priya Sharma',
-      role: 'Customer, Mumbai',
-      image: 'https://placehold.co/100x100/FF4081/ffffff?text=PS',
-      quote: "I love that I can order from my trusted local shop and get it in 10 minutes. It feels good to support local businesses.",
-    },
-    {
-      id: 3,
-      name: 'Amit Singh',
-      role: 'Kirana Owner, Bangalore',
-      image: 'https://placehold.co/100x100/FFD700/ffffff?text=AS',
-      quote: "The technology is so easy to use. I can track everything on my phone. Nestora has truly modernized my shop.",
-    },
-  ];
+ const testimonials = [
+  {
+    id: 1,
+    name: 'Ramesh Patil',
+    role: 'Kirana Store Owner, Mulund',
+    image: 'https://placehold.co/100x100/00BCD4/ffffff?text=RP',
+    quote:
+      "When the Nestora team approached me with this idea, I immediately felt it solves real problems for local shop owners. If executed well, this can bring more customers without extra hassle.",
+  },
+  {
+    id: 2,
+    name: 'Sneha Joshi',
+    role: 'Resident, Mulund',
+    image: 'https://placehold.co/100x100/FF4081/ffffff?text=SJ',
+    quote:
+      "I really liked the Nestora concept when it was explained to me. Ordering daily groceries from nearby shops within minutes sounds very convenient and trustworthy.",
+  },
+  {
+    id: 3,
+    name: 'Mahesh More',
+    role: 'Kirana Store Owner, Karjat',
+    image: 'https://placehold.co/100x100/FFD700/ffffff?text=MM',
+    quote:
+      "Nestora’s idea is simple yet powerful. Digital orders, better stock movement, and local delivery can really help small shopkeepers like us grow in the future.",
+  },
+];
+
 
   return (
     <section id="testimonials" className="testimonials-section">
