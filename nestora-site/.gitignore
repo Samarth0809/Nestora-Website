@@ -26,6 +26,9 @@ dist-ssr
 # Environment files
 .env
 .env.*
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 .vercel
 .env*.local
