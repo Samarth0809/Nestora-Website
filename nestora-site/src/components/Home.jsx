@@ -1,4 +1,4 @@
-import './Home.css';
+import './Homes.css';
 import TextType from './TextType';
 
 const Home = () => {
@@ -30,8 +30,8 @@ const Home = () => {
           </div>
         </div>
         
+       {/* Abstract representation of connection between shop and home */}
         <div className="hero-visual animate-fade-in" style={{ animationDelay: '0.3s' }}>
-           {/* Abstract representation of connection between shop and home */}
            <div className="connection-visual">
               <div className="node shop-node">
                 <div className="node-icon-wrapper">
@@ -43,15 +43,11 @@ const Home = () => {
               </div>
               <div className="connection-line">
                 <div className="packet" aria-hidden="true">
-                  {/* Filled scooter delivery silhouette (matches provided image) */}
                   <svg className="rider" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <g fill="currentColor">
-                      {/* rear box */}
                       <rect x="2" y="18" width="18" height="14" rx="2" />
-                      {/* wheels */}
                       <circle cx="18" cy="48" r="6" />
                       <circle cx="46" cy="48" r="6" />
-                      {/* scooter body and rider silhouette */}
                       <path d="M12 44h8l6-14 12-6 6 6v6h-6l-6 6h-8" />
                       <path d="M28 18c0-4 6-8 10-8s6 4 6 8c0 2-2 4-4 4s-6-2-8-2" />
                     </g>

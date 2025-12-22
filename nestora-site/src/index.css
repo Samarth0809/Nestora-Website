@@ -204,7 +204,7 @@ body {
 
 /* Ensure every main section uses consistent vertical spacing */
 section {
-  padding: 84px 0;
+  padding: 54px 0;
 }
 
 @media (max-width: 720px) {
@@ -257,7 +257,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   margin-bottom: 8px;
   color: var(--muted-gray);
-  font-size: 2.85rem;
+  font-size: 2.55rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }

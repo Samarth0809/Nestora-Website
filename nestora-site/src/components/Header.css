@@ -41,8 +41,11 @@
 
 .mobile-title{
   /* display: none; */
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 600;
+  padding-top: 10px;
+  align-items: center;
+  justify-content: center;
   /* color: var(--primary-teal); */
   color: var(--primary-dark);
 }

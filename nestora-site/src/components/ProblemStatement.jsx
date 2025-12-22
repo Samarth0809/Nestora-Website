@@ -27,10 +27,10 @@ const ProblemStatement = () => {
             <div className="icon-wrapper warning">
               <TrendingDown className="problem-icon" />
             </div>
-            <h3>Leaking Loyalty</h3>
+            <h3>Unfair Market</h3>
             <p>
               Without digitized inventory and logistics, kiranas are losing their 
-              <strong> most valuable customers</strong> and basket share to VC-backed apps.
+              <strong> most valuable customers</strong> and basket share to dark store based companies.
             </p>
           </div>
           

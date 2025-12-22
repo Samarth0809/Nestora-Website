@@ -1,4 +1,16 @@
 import { useState } from 'react';
+import { 
+  Mail, 
+  MapPin, 
+  Phone, 
+  Send, 
+  CheckCircle, 
+  AlertCircle, 
+  Linkedin, 
+  Twitter, 
+  Globe,
+  ArrowRight
+} from 'lucide-react';
 import './TeamContact.css';
 import ankitImg from '../assets/ankit_profile.jpeg';
 import sahilImg from '../assets/sahil_profile.jpeg';
@@ -47,10 +59,12 @@ const TeamContact = () => {
     }
     setError('');
     setLoading(true);
+    
     const apiBase = (
       import.meta.env.VITE_API_BASE || (import.meta.env.DEV ? 'http://localhost:4000' : '')
     ).trim().replace(/\/$/, '');
     const requestUrl = apiBase ? `${apiBase}/api/contact` : '/api/contact';
+
     try {
       const res = await fetch(requestUrl, {
         method: 'POST',
@@ -83,162 +97,174 @@ const TeamContact = () => {
 
   const founders = [
     {
-      name: 'Ankit Thakur',
-      title: 'Founder & CEO',
-      image: ankitImg,
-      bio: [
-        'Ankit Thakur is a visionary entrepreneur and product strategist with deep experience in local commerce, community networks, and digital innovation.',
-        'He leads the company’s mission to empower small businesses through technology-driven solutions and sustainable growth models.'
-      ]
-    },
-    {
       name: 'Sahil Deshmukh',
       title: 'Co-Founder & COO',
       image: sahilImg,
-      bio: [
-        'Sahil Deshmukh is a creative marketing leader passionate about building brands that connect deeply with people and communities.',
-        'He drives the company’s marketing vision, user growth strategies, and brand partnerships with a focus on trust and authenticity.'
-      ]
+      bio: 'Driving marketing vision and user growth strategies with a focus on trust and authenticity.',
+      socials: { linkedin: '#', twitter: '#' }
     },
     {
-      name: 'Samarth Jagakar',
-      title: 'Co-Founder & CTO',
+      name: 'Ankit Thakur',
+      title: 'Founder & CEO',
+      image: ankitImg,
+      bio: 'Visionary entrepreneur leading the mission to empower small businesses through technology.',
+      socials: { linkedin: '#', twitter: '#' }
+    },
+    {
+      name: 'Samarth Shete',
+      title: 'Founding Engineer',
       image: samarthImg,
-      bio: [
-        'Samarth Jagakar is a technology architect and innovation enthusiast with a strong background in scalable systems and mobile platforms.',
-        'He oversees the company’s technology roadmap, product development, and engineering culture to deliver reliable and user-centric experiences.'
-      ]
+      bio: 'Architecting scalable solutions and driving technical innovation for the Nestora platform.',
+      socials: { linkedin: '#', twitter: '#' }
     }
   ];
 
-  const contact = {
-    name: 'Ankit Thakur',
-    role: 'Founder & CEO',
-    phone: '+91 7400450001',
-    email: 'ankitsthakurl71@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/ankit-thakur-018881290/'
-  };
-
   return (
-    <section id="team-contact" className="team-contact">
-      <div className="container">
-        <div className="section-header">
-          <h2>Team &amp; Contact</h2>
-          <p>Founders, operators, and investors align here. We respond within 24 hours with the right artefacts.</p>
+    <div className="tc-page">
+      {/* Hero Section */}
+      <section className="tc-hero">
+        <div className="tc-hero-content">
+          <h1 className="tc-title">Get in <span className="highlight">Touch</span></h1>
+          <p className="tc-subtitle">
+            Have a question, partnership idea, or just want to say hello? 
+            We'd love to hear from you.
+          </p>
         </div>
+        <div className="tc-hero-bg-shape"></div>
+      </section>
 
-        <div className="cta-strip" role="note">
-          <p>Need the diligence deck, pilot metrics, or a live Q&amp;A?</p>
-          <a href="#final-punchline" className="cta-link">Review the punch line</a>
-          <a href="mailto:ankitsthakurl71@gmail.com" className="cta-link accent">Request access</a>
-        </div>
-
-        <div className="team-contact-content">
-          <div className="team-info">
-            <h3>Our Team</h3>
-            <div className="founders">
-              {founders.map((f) => (
-                <article key={f.name} className="founder-card" aria-label={`${f.title} ${f.name}`}>
-                  <div className="founder-avatar">
-                    {f.image ? (
-                      <img src={f.image} alt={`${f.name} profile`} className="founder-img" />
-                    ) : (
-                      <span aria-hidden="true">👨‍💼</span>
-                    )}
-                  </div>
-                  <div className="founder-details">
-                    <h4>{f.title} — {f.name}</h4>
-                    {f.bio.map((p, i) => (
-                      <p key={i}>{p}</p>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <div className="investor-contact" aria-label="Investor and media contact details">
-              <h4>Investor &amp; Media Contact</h4>
-              <p className="positioning">Revolutionizing distribution with fair and transparent market pricing.</p>
-              <p className="turnaround">Deck, model, and diligence data room available on request — we usually turn these around within 12 hours.</p>
-              <ul>
-                <li><strong>{contact.name}</strong> — {contact.role}</li>
-                <li>Phone: <a href={`tel:${contact.phone.replace(/\s+/g, '')}`}>{contact.phone}</a></li>
-                <li>Email: <a href={`mailto:${contact.email}`}>{contact.email}</a></li>
-                <li>
-                  LinkedIn: <a href={contact.linkedin} target="_blank" rel="noreferrer">{contact.linkedin}</a>
-                </li>
-              </ul>
-              <div className="vision-note">
-                We are determined to bring kiranas into the future of quick commerce — building micro-inventories that
-                serve regional needs while keeping local commerce in local hands. Ask us for customer stories, PRDs, or
-                compliance docs — we share everything needed for decision-making.
+      <div className="tc-container">
+        <div className="tc-grid">
+          
+          {/* Left Column: Contact Info & Founders Preview */}
+          <div className="tc-left-col">
+            <div className="tc-info-cards">
+              <div className="tc-info-card">
+                <div className="icon-box"><Mail size={24} /></div>
+                <div>
+                  <h3>Email Us</h3>
+                  <p>hello@nestora.com</p>
+                  <p>support@nestora.com</p>
+                </div>
+              </div>
+              <div className="tc-info-card">
+                <div className="icon-box"><MapPin size={24} /></div>
+                <div>
+                  <h3>Visit Us</h3>
+                  <p>Bangalore, India</p>
+                  <p>Innovation Hub, 560001</p>
+                </div>
               </div>
             </div>
 
-            <div className="location">
-              <h4>Location</h4>
-              <p>Mumbai, India</p>
-              <p>Headquartered in the heart of India's commercial capital</p>
+            <div className="tc-founders-preview">
+              <h2>Meet the Team</h2>
+              <div className="founders-list">
+                {founders.map((founder, idx) => (
+                  <div key={idx} className="founder-card-mini">
+                    <img src={founder.image} alt={founder.name} className="founder-img" />
+                    <div className="founder-details">
+                      <h4>{founder.name}</h4>
+                      <span>{founder.title}</span>
+                      <p>{founder.bio}</p>
+                      <div className="founder-socials">
+                        <Linkedin size={16} />
+                        <Twitter size={16} />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          <aside className="contact-form" aria-labelledby="join-vendor">
-            <h3 id="join-vendor">Let's Connect</h3>
-            {sent ? (
-              <div className="form-feedback" aria-live="polite">
-                {emailed ? (
-                  <>
-                    <p>Thank you — we received your request and emailed the deck. Expect a follow-up within 24 hours.</p>
-                    <button type="button" className="submit-btn" onClick={() => resetFlow(true)}>Send another</button>
-                  </>
-                ) : (
-                  <>
-                    <p>Thanks — your request was saved locally. If email delivery failed, you can send it via your email client.</p>
-                    <MailtoButton {...formData} />
-                    <button type="button" className="submit-btn" onClick={() => resetFlow(false)}>
-                      Try again
-                    </button>
-                  </>
-                )}
+          {/* Right Column: Contact Form */}
+          <div className="tc-right-col">
+            <div className="tc-form-wrapper">
+              <div className="form-header">
+                <h2>Send us a Message</h2>
+                <p>We usually respond within 24 hours.</p>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="name">Full Name</label>
-                  <input type="text" id="name" name="name" value={formData.name} onChange={updateField('name')} required />
+
+              {sent ? (
+                <div className="success-message">
+                  <CheckCircle size={48} className="success-icon" />
+                  <h3>Message Sent!</h3>
+                  <p>Thank you for reaching out. We'll get back to you shortly.</p>
+                  {emailed && <p className="email-note">A confirmation email has been sent to you.</p>}
+                  <button className="tc-btn-reset" onClick={() => resetFlow(true)}>
+                    Send Another Message
+                  </button>
                 </div>
-                <div className="form-group">
-                  <label htmlFor="email">Email Address</label>
-                  <input type="email" id="email" name="email" value={formData.email} onChange={updateField('email')} required />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="org">Organization (optional)</label>
-                  <input type="text" id="org" name="org" value={formData.org} onChange={updateField('org')} placeholder="Company / neighbourhood" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="message">Message (Optional)</label>
-                  <textarea id="message" name="message" rows="4" placeholder="Tell us about your business..." value={formData.message} onChange={updateField('message')}></textarea>
-                </div>
-                {error && <div className="form-error" role="alert">{error}</div>}
-                <button type="submit" className="submit-btn" disabled={loading}>{loading ? 'Sending...' : 'Submit Application'}</button>
-              </form>
-            )}
-          </aside>
+              ) : (
+                <form onSubmit={handleSubmit} className="tc-form">
+                  <div className="form-group">
+                    <label>Name</label>
+                    <input 
+                      type="text" 
+                      placeholder="Your full name"
+                      value={formData.name}
+                      onChange={updateField('name')}
+                      className="tc-input"
+                    />
+                  </div>
+                  
+                  <div className="form-group">
+                    <label>Email</label>
+                    <input 
+                      type="email" 
+                      placeholder="you@company.com"
+                      value={formData.email}
+                      onChange={updateField('email')}
+                      className="tc-input"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Organization (Optional)</label>
+                    <input 
+                      type="text" 
+                      placeholder="Your company or organization"
+                      value={formData.org}
+                      onChange={updateField('org')}
+                      className="tc-input"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Message</label>
+                    <textarea 
+                      placeholder="How can we help you?"
+                      rows={5}
+                      value={formData.message}
+                      onChange={updateField('message')}
+                      className="tc-input tc-textarea"
+                    />
+                  </div>
+
+                  {error && (
+                    <div className="error-message">
+                      <AlertCircle size={18} />
+                      <span>{error}</span>
+                    </div>
+                  )}
+
+                  <button type="submit" className="tc-submit-btn" disabled={loading}>
+                    {loading ? 'Sending...' : (
+                      <>
+                        Send Message <Send size={18} />
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
 export default TeamContact;
-
-const MailtoButton = ({ name, email, org, message }) => {
-  const subject = encodeURIComponent('Nestora partnership request');
-  const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nOrganization: ${org}\n\nMessage:\n${message}`);
-  const href = `mailto:nestora.privatelimited@gmail.com?subject=${subject}&body=${body}`;
-  return (
-    <a href={href} className="mailto-btn" target="_blank" rel="noreferrer">
-      Send via email client
-    </a>
-  );
-};

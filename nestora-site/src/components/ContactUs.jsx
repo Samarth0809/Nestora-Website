@@ -13,6 +13,7 @@ const ContactUs = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [emailed, setEmailed] = useState(false);
 
   const updateField = (field) => (e) => {
     const value = e.target.value;
@@ -34,13 +35,42 @@ const ContactUs = () => {
     }
     setError('');
     setLoading(true);
-    
-    // Simulate API call for now or use existing endpoint
-    setTimeout(() => {
-        setSent(true);
-        setLoading(false);
-        setFormData(initialFormState);
-    }, 1000);
+
+    const apiBase = (
+      import.meta.env.VITE_API_BASE || (import.meta.env.DEV ? 'http://localhost:4000' : '')
+    ).trim().replace(/\/$/, '');
+    const requestUrl = apiBase ? `${apiBase}/api/contact` : '/api/contact';
+
+    try {
+      const res = await fetch(requestUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          org: formData.org,
+          message: formData.message,
+          source: 'contact-us'
+        })
+      });
+
+      if (!res.ok) {
+        const text = await res.text().catch(() => null);
+        throw new Error(text || 'Network response was not ok');
+      }
+
+      const payload = await res.json().catch(() => ({}));
+      setSent(true);
+      setEmailed(!!payload.emailed);
+      setFormData(initialFormState);
+    } catch (err) {
+      console.error('ContactUs submission failed', err);
+      setError('Submission failed — please try again or email founders.nestora@gmail.com.');
+      setSent(true);
+      setEmailed(false);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -54,7 +84,7 @@ const ContactUs = () => {
             <div className="contact-details">
               <div className="contact-item">
                 <span className="icon">📧</span>
-                <a href="mailto:founders@nestora.in">founders@nestora.in</a>
+                <a href="mailto:founders.nestora@gmail.com">founders.nestora@gmail.com</a>
               </div>
               <div className="contact-item">
                 <span className="icon">📍</span>
@@ -68,7 +98,17 @@ const ContactUs = () => {
               <div className="success-message">
                 <h3>Thank you!</h3>
                 <p>We've received your message and will get back to you shortly.</p>
-                <button className="btn btn-secondary" onClick={() => setSent(false)}>Send another</button>
+                {emailed && <p className="email-note">A confirmation email was sent to you.</p>}
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => {
+                    setSent(false);
+                    setError('');
+                    setEmailed(false);
+                  }}
+                >
+                  Send another
+                </button>
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit}>

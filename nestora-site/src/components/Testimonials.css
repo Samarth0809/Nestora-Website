@@ -1,5 +1,6 @@
 .testimonials-section {
   background-color: var(--gray-50);
+  padding: 80px 0;
 }
 
 .testimonials-grid {
@@ -15,6 +16,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-image {
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 20px;
+  z-index: 1;
 }
 
 .testimonial-image img {
@@ -23,7 +39,39 @@
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--primary-light);
-  margin-bottom: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Desktop Hover Effect: x3 Zoom */
+@media (min-width: 769px) {
+  .testimonial-image:hover img {
+    transform: scale(3);
+    border-radius: 12px;
+    z-index: 100;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    border-color: white;
+  }
+  
+  .zoom-hint {
+    display: none;
+  }
+}
+
+.zoom-hint {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: var(--primary-dark);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.testimonial-image:active .zoom-hint {
+  opacity: 1;
 }
 
 .testimonial-quote {
@@ -31,14 +79,153 @@
   color: var(--gray-600);
   margin-bottom: 20px;
   flex: 1;
+  line-height: 1.6;
 }
 
 .testimonial-author h4 {
   color: var(--primary-dark);
   margin-bottom: 5px;
+  font-weight: 700;
 }
 
 .testimonial-author span {
   color: var(--muted-gray);
   font-size: 0.9rem;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 28px 0;
+  }
+
+  /* Horizontal swipe carousel for small screens */
+  .testimonials-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 12px 16px 48px 16px; /* breathing room and space for shadows */
+    margin: 0; /* keep inside container padding */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    box-sizing: border-box;
+  }
+
+  .testimonials-grid::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  /* Cards should fit the viewport and allow content to wrap */
+  .testimonial-card {
+    min-width: 92vw; /* almost-full width so swipe feels natural */
+    max-width: 92vw;
+    scroll-snap-align: center;
+    margin: 0;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.09);
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  /* Make images slightly larger on mobile and keep them circular */
+  .testimonial-image img {
+    width: 110px;
+    height: 110px;
+    border-radius: 12px; /* slightly rounded rectangle looks better when enlarged */
+  }
+
+  /* Ensure text wraps and doesn't overflow */
+  .testimonial-quote,
+  .testimonial-author h4,
+  .testimonial-author span {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+
+  .testimonial-quote {
+    font-size: 0.98rem;
+    margin-bottom: 16px;
+  }
+
+  .zoom-hint {
+    opacity: 0.85;
+    bottom: -22px;
+  }
+}
+
+/* Lightbox Modal */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Close button in lightbox: keep no background on hover/focus/active */
+.close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.lightbox-content .close-btn,
+.lightbox-content .close-btn:hover,
+.lightbox-content .close-btn:focus,
+.lightbox-content .close-btn:active {
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Extra overrides to block any global button hover rules or mobile tap highlights */
+.lightbox-overlay button.close-btn,
+.lightbox-overlay button.close-btn:hover,
+.lightbox-overlay button.close-btn:focus,
+.lightbox-overlay button.close-btn:active {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: white !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  box-shadow: none !important;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
