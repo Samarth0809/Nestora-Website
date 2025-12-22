@@ -1,5 +1,5 @@
 import './Header.css';
-import logo from '../assets/Nestora_Logo.png';
+import logo from '../assets/Nestora_logo.png';
 import { useState } from 'react';
 
 const Header = () => {
