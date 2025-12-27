@@ -120,7 +120,7 @@ const testimonials = [
               <div 
                 className="testimonial-image" 
                 onClick={() => setSelectedImage(testimonial.image)}
-              >
+               >
                 <img src={testimonial.image} alt={testimonial.name} />
                 <div className="zoom-hint">Tap to view</div>
               </div>

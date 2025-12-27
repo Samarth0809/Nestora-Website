@@ -45,14 +45,14 @@
 
 /* Desktop Hover Effect: x3 Zoom */
 @media (min-width: 769px) {
-  .testimonial-image:hover img {
+  /* .testimonial-image:hover img {
     transform: scale(3);
     border-radius: 12px;
     z-index: 100;
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     border-color: white;
-  }
-  
+  } */
+
   .zoom-hint {
     display: none;
   }
