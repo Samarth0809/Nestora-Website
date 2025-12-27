@@ -8,9 +8,9 @@ const Facts = () => {
     { id: 2, value: 'Zero', label: 'Expired Orders' },
     { id: 3, value: '100%', label: 'Local Inventory' },
     { id: 4, value: '2x', label: 'Kirana Revenue' },
-    { id: 5, value: '99.9%', label: 'Uptime' },
-    { id: 6, value: '500+', label: 'Partner Kiranas' },
-    { id: 7, value: '24/7', label: 'Support' },
+    // { id: 5, value: '99.9%', label: 'Uptime' },
+    { id: 6, value: '100+', label: 'Kiranas in favour' },
+    // { id: 7, value: '24/7', label: 'Support' },
     { id: 8, value: '30%', label: 'Average Cost Savings' },
   ];
 

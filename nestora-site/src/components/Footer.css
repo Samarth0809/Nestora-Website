@@ -20,6 +20,11 @@
   align-items: start;
 }
 
+/* align the Connect section to the right on larger screens */
+.footer-connect {
+  justify-self: end;
+}
+
 .footer-section h3 {
   color: var(--primary-teal);
   margin-bottom: 8px;
@@ -82,6 +87,9 @@
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
+  }
+  .footer-connect {
+    justify-self: start; /* reset for stacked mobile layout */
   }
 }
 

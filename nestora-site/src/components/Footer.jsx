@@ -13,7 +13,7 @@ const Footer = () => {
             <p>The Local OS for Neighbourhoods</p>
             <p>Connecting customers, vendors, and delivery partners in a trusted hyperlocal ecosystem.</p>
           </div>
-          <div className="footer-section">
+          {/* <div className="footer-section">
             <h4>Quick Links</h4>
             <ul>
               <li><a href="#home">Home</a></li>
@@ -29,15 +29,15 @@ const Footer = () => {
               <li><a href="#pilot-growth">Pilot & Growth</a></li>
               <li><a href="#team-contact">Contact</a></li>
             </ul>
-          </div>
-          <div className="footer-section">
+          </div> */}
+          <div className="footer-section footer-connect">
             <h4>Connect</h4>
             <p>Email: <a href="mailto:nestora.privatelimited@gmail.com">nestora.privatelimited@gmail.com</a></p>
             <p>Location: Mumbai, India</p>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 Nestora. All rights reserved.</p>
+          <p>&copy; 2025 Nestora. All rights reserved.</p>
         </div>
       </div>
     </footer>
