@@ -1,5 +1,6 @@
 import './Homes.css';
 import TextType from './TextType';
+import MagneticButton from './MagneticButton';
 
 const Home = () => {
   return (
@@ -25,8 +26,12 @@ const Home = () => {
             With 10-minute delivery for their FMCG products. Zero capital waste. 100% Community driven.
           </p>
           <div className="hero-cta">
-            <a href="#contact" className="btn btn-primary">Join the Revolution</a>
-            <a href="#solution" className="btn btn-secondary">See How It Works</a>
+            <MagneticButton>
+              <a href="#contact" className="btn btn-primary">Join the Revolution</a>
+            </MagneticButton>
+            <MagneticButton>
+              <a href="#solution" className="btn btn-secondary">See How It Works</a>
+            </MagneticButton>
           </div>
         </div>
         

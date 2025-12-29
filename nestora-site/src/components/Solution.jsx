@@ -1,5 +1,6 @@
 import React from "react";
 import { Smartphone, ShieldCheck, Truck, MapPin } from "lucide-react";
+import TiltCard from "./TiltCard";
 import "./Solution.css";
 
 const Solution = () => {
@@ -26,33 +27,45 @@ const Solution = () => {
 
             <ul className="solution-features">
               <li>
-                <div className="feature-icon-wrapper">
-                  <Smartphone className="feature-icon" />
-                </div>
-                <div className="feature-content">
-                  <strong>Kirana OS</strong>
-                  <p>Inventory, billing, and orders—fully digitized.</p>
-                </div>
+                <TiltCard className="feature-card-tilt">
+                  <div className="feature-inner">
+                    <div className="feature-icon-wrapper">
+                      <Smartphone className="feature-icon" />
+                    </div>
+                    <div className="feature-content">
+                      <strong>Kirana OS</strong>
+                      <p>Inventory, billing, and orders—fully digitized.</p>
+                    </div>
+                  </div>
+                </TiltCard>
               </li>
 
               <li>
-                <div className="feature-icon-wrapper">
-                  <ShieldCheck className="feature-icon" />
-                </div>
-                <div className="feature-content">
-                  <strong>Expiry Shield</strong>
-                  <p>Smart checks prevent stale or expired dispatches.</p>
-                </div>
+                <TiltCard className="feature-card-tilt">
+                  <div className="feature-inner">
+                    <div className="feature-icon-wrapper">
+                      <ShieldCheck className="feature-icon" />
+                    </div>
+                    <div className="feature-content">
+                      <strong>Expiry Shield</strong>
+                      <p>Smart checks prevent stale or expired dispatches.</p>
+                    </div>
+                  </div>
+                </TiltCard>
               </li>
 
               <li>
-                <div className="feature-icon-wrapper">
-                  <Truck className="feature-icon" />
-                </div>
-                <div className="feature-content">
-                  <strong>Tamper-Proof Delivery</strong>
-                  <p>Verified runners and sealed handovers.</p>
-                </div>
+                <TiltCard className="feature-card-tilt">
+                  <div className="feature-inner">
+                    <div className="feature-icon-wrapper">
+                      <Truck className="feature-icon" />
+                    </div>
+                    <div className="feature-content">
+                      <strong>Tamper-Proof Delivery</strong>
+                      <p>Verified runners and sealed handovers.</p>
+                    </div>
+                  </div>
+                </TiltCard>
               </li>
 
               <li>

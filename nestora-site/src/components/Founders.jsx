@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import './Founders.css';
 import ankitImg from '../assets/ankit_profile.jpeg';
 import sahilImg from '../assets/sahil_profile.jpeg';
@@ -60,7 +61,15 @@ const Founders = () => {
         </div>
         <div className="founders-grid">
           {founders.map((founder) => (
-            <div key={founder.id} className="founder-card card animate-fade-in">
+            <motion.div 
+              key={founder.id} 
+              className="founder-card card"
+              whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)" }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: founder.id * 0.1 }}
+            >
               <div className="founder-image-wrapper">
                 <img src={founder.image} alt={founder.name} className="founder-image" />
               </div>
@@ -80,7 +89,7 @@ const Founders = () => {
                 <span className="founder-role">{founder.role}</span>
                 <p className="founder-bio">{founder.bio}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

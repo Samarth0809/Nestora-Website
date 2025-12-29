@@ -1,6 +1,26 @@
 import { useEffect, useState } from 'react';
 import './Facts.css';
 import LogoLoop from './LogoLoop';
+import Counter from './Counter';
+import Reveal from './Reveal';
+
+const AnimatedFactValue = ({ value }) => {
+  // Check for patterns like "100%", "2x", "100+"
+  const numberMatch = value.match(/^(\d+)(.*)$/);
+  
+  if (numberMatch && !value.includes('-')) {
+    const num = parseInt(numberMatch[1]);
+    const suffix = numberMatch[2];
+    return (
+      <span>
+        <Counter value={num} />
+        {suffix}
+      </span>
+    );
+  }
+  
+  return <span>{value}</span>;
+};
 
 const Facts = () => {
   const facts = [
@@ -71,7 +91,7 @@ const Facts = () => {
         logos={facts.map(f => ({
           node: (
             <div className="fact-loop-item" aria-hidden={true} key={f.id}>
-              <h3 className="fact-value">{f.value}</h3>
+              <h3 className="fact-value"><AnimatedFactValue value={f.value} /></h3>
               <p className="fact-label">{f.label}</p>
             </div>
           ),
