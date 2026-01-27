@@ -1,4 +1,5 @@
 import './FinalPunchline.css';
+import { Link } from 'react-router-dom';
 
 const punchPoints = [
   '200+ SKUs per store, expiry-proof promise, and transparent pricing win consumer trust fast.',
@@ -43,13 +44,13 @@ const FinalPunchline = () => {
                 <li key={topic}>{topic}</li>
               ))}
             </ul>
-            <a href="#team-contact" className="cta">Book the Q&amp;A</a>
+            <Link to="/contact" className="cta">Book the Q&amp;A</Link>
           </article>
         </div>
 
         <div className="deck-cta">
           <p>Need the detailed deck, product demo, or pilot data room?</p>
-          <a href="#team-contact" className="cta secondary">Request Access</a>
+          <Link to="/contact" className="cta secondary">Request Access</Link>
         </div>
       </div>
     </section>

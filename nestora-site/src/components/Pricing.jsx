@@ -1,4 +1,5 @@
 import './Pricing.css';
+import { Link } from 'react-router-dom';
 
 const revenuePoints = [
   {
@@ -57,7 +58,7 @@ const Pricing = () => {
           <div className="roi-card alt">
             <h3>Want the deep model?</h3>
             <p>Request the investor deck or pilot plan and we’ll walk through unit economics, sample store P&L, and uplift scenarios.</p>
-            <a href="#team-contact" className="plan-cta">Request the Deck</a>
+            <Link to="/contact" className="plan-cta">Request the Deck</Link>
           </div>
         </div>
 

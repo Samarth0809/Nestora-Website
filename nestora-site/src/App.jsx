@@ -1,53 +1,41 @@
-import Header from './components/Header'
-import Home from './components/Home'
-import Facts from './components/Facts'
-import WhatIsNestora from './components/WhatIsNestora'
-import ProblemStatement from './components/ProblemStatement'
-import Solution from './components/Solution'
-import MarketOpportunity from './components/MarketOpportunity'
-import Testimonials from './components/Testimonials'
-import Founders from './components/Founders'
-import ContactUs from './components/ContactUs'
-import Footer from './components/Footer'
-import CustomCursor from './components/CustomCursor'
-import BackToTop from './components/BackToTop'
-import Reveal from './components/Reveal'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
+import BackToTop from './components/BackToTop';
+import LandingPage from './pages/LandingPage';
+import AboutPage from './pages/AboutPage';
+import FeaturesPage from './pages/FeaturesPage';
+import ProblemPage from './pages/ProblemPage';
+import SolutionPage from './pages/SolutionPage';
+import MarketPage from './pages/MarketPage';
+import TeamPage from './pages/TeamPage';
+import ContactPage from './pages/ContactPage';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <CustomCursor />
-      <Header />
-      <Home />
-      <Reveal>
-        <Facts />
-      </Reveal>
-      <Reveal>
-        <WhatIsNestora />
-      </Reveal>
-      <Reveal>
-        <ProblemStatement />
-      </Reveal>
-      <Reveal>
-        <Solution />
-      </Reveal>
-      <Reveal>
-        <MarketOpportunity />
-      </Reveal>
-      <Reveal>
-        <Testimonials />
-      </Reveal>
-      <Reveal>
-        <Founders />
-      </Reveal>
-      <Reveal>
-        <ContactUs />
-      </Reveal>
-      <Footer />
-      <BackToTop />
-    </div>
-  )
+    <Router>
+      <div className="App">
+        <CustomCursor />
+        <Header />
+        <main>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/features" element={<FeaturesPage />} />
+              <Route path="/problem" element={<ProblemPage />} />
+              <Route path="/solution" element={<SolutionPage />} />
+              <Route path="/market" element={<MarketPage />} />
+              <Route path="/team" element={<TeamPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+        </main>
+        <Footer />
+        <BackToTop />
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

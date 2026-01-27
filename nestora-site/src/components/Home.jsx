@@ -1,14 +1,15 @@
 import './Homes.css';
 import TextType from './TextType';
 import MagneticButton from './MagneticButton';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <section id="home" className="home">
       <div className="container">
         <div className="hero-content animate-fade-in">
-          <span className="eyebrow">The Future of Quick Commerce</span>
-          <div className="hero-title">
+          <h2 className="eyebrow">The Future of Quick Commerce</h2>
+          <h1 className="hero-title">
             <TextType
               text="The Nearest mini Warehouse is already Down the Street."
               typingSpeed={45}
@@ -18,19 +19,19 @@ const Home = () => {
               className="block highlight"
               loop={false}
             />
-          </div>
+          </h1>
           <p className="hero-subtitle">
             We don't build dark stores. We wake up the sleeping giants of Indian retail:
             <strong className="text-dark-blue">The Local Kiranas.</strong>
             <br/>
-            With 10-minute delivery for their FMCG products. Zero capital waste. 100% Community driven.
+            Nestora is the <strong>hyperlocal marketplace</strong> and <strong>neighbourhood commerce platform</strong> that enables 10-minute delivery for FMCG products directly from local stores. Zero capital waste. 100% Community driven. We are building the operating system for local business growth.
           </p>
           <div className="hero-cta">
             <MagneticButton>
-              <a href="#contact" className="btn btn-primary">Join the Revolution</a>
+              <Link to="/contact" className="btn btn-primary">Join the Revolution</Link>
             </MagneticButton>
             <MagneticButton>
-              <a href="#solution" className="btn btn-secondary">See How It Works</a>
+              <Link to="/solution" className="btn btn-secondary">See How It Works</Link>
             </MagneticButton>
           </div>
         </div>

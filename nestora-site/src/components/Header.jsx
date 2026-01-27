@@ -1,6 +1,7 @@
 import './Header.css';
 import logo from '../assets/Nestora_logo.png';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -9,24 +10,24 @@ const Header = () => {
     <header className="header">
       <div className="container">
         <div className="logo">
-          <a href="#home" aria-label="Nestora home">
+          <Link to="/" aria-label="Nestora home">
             {logo ? (
               <img src={logo} alt="Nestora logo" className="site-logo" />
             ) : (
               <h1>Nestora</h1>
             )}
             <span className="mobile-title">Nestora</span>
-          </a>
+          </Link>
         </div>
         <nav className="nav">
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#problem">Problem</a></li>
-            <li><a href="#solution">Solution</a></li>
-            <li><a href="#market">Market</a></li>
-            <li><a href="#founders">Team</a></li>
-            <li><a href="#contact" className="btn btn-primary nav-cta">Contact Us</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/problem">Problem</Link></li>
+            <li><Link to="/features">Features</Link></li>
+            <li><Link to="/market">Market</Link></li>
+            <li><Link to="/team">Team</Link></li>
+            <li><Link to="/contact" className="btn btn-primary nav-cta">Contact Us</Link></li>
           </ul>
         </nav>
         <button
@@ -43,13 +44,13 @@ const Header = () => {
         {mobileOpen && (
           <div className="mobile-nav" role="menu">
             <ul>
-              <li><a href="#home" onClick={()=>setMobileOpen(false)}>Home</a></li>
-              <li><a href="#about" onClick={()=>setMobileOpen(false)}>About</a></li>
-              <li><a href="#problem" onClick={()=>setMobileOpen(false)}>Problem</a></li>
-              <li><a href="#solution" onClick={()=>setMobileOpen(false)}>Solution</a></li>
-              <li><a href="#market" onClick={()=>setMobileOpen(false)}>Market</a></li>
-              <li><a href="#founders" onClick={()=>setMobileOpen(false)}>Team</a></li>
-              <li><a href="#contact" onClick={()=>setMobileOpen(false)}>Contact Us</a></li>
+              <li><Link to="/" onClick={()=>setMobileOpen(false)}>Home</Link></li>
+              <li><Link to="/about" onClick={()=>setMobileOpen(false)}>About</Link></li>
+              <li><Link to="/problem" onClick={()=>setMobileOpen(false)}>Problem</Link></li>
+              <li><Link to="/features" onClick={()=>setMobileOpen(false)}>Features</Link></li>
+              <li><Link to="/market" onClick={()=>setMobileOpen(false)}>Market</Link></li>
+              <li><Link to="/team" onClick={()=>setMobileOpen(false)}>Team</Link></li>
+              <li><Link to="/contact" onClick={()=>setMobileOpen(false)}>Contact Us</Link></li>
             </ul>
           </div>
         )}
