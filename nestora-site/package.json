@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "vite",
@@ -42,9 +42,12 @@
     "vite": "^7.1.7"
   },
   "overrides": {
-    "react-helmet-async": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    }
+  "rollup": "3.29.5",
+  "react-helmet-async": {
+    "react": "$react",
+    "react-dom": "$react-dom"
   }
+}
+
+  
 }
