@@ -1,4 +1,9 @@
 {
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "env": {
+    "ROLLUP_DISABLE_NATIVE": "1"
+  },
   "build": {
     "env": {
       "ROLLUP_DISABLE_NATIVE": "1"
