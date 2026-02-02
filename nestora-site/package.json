@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "engines": {
-    "node": "20.x"
+    "node": "18.x"
   },
   "scripts": {
     "dev": "vite",
@@ -12,7 +12,8 @@
     "test:smtp": "node test-smtp.js",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "npm rebuild rollup || true"
   },
   "dependencies": {
     "cors": "^2.8.5",
