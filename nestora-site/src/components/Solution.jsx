@@ -69,13 +69,17 @@ const Solution = () => {
               </li>
 
               <li>
-                <div className="feature-icon-wrapper">
-                  <MapPin className="feature-icon" />
-                </div>
-                <div className="feature-content">
-                  <strong>Hyper-Local Fulfillment</strong>
-                  <p>Orders fulfilled from the nearest kirana.</p>
-                </div>
+                <TiltCard className="feature-card-tilt">
+                  <div className="feature-inner">
+                    <div className="feature-icon-wrapper">
+                      <MapPin className="feature-icon" />
+                    </div>
+                    <div className="feature-content">
+                      <strong>Hyper-Local Fulfillment</strong>
+                      <p>Orders fulfilled from the nearest kirana.</p>
+                    </div>
+                  </div>
+                </TiltCard>
               </li>
             </ul>
           </div>
