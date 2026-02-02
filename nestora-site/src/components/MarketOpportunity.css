@@ -1,7 +1,9 @@
 .market-section {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-navy) 100%);
-  color: var(--white);
+  background: var(--bg-tint);
+  color: var(--text-main);
   text-align: center;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .market-content {
@@ -23,31 +25,32 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: 8px solid var(--primary-aqua);
+  border: 8px solid var(--primary-orange);
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 20px rgba(0, 188, 212, 0.3);
+  background: var(--bg-card);
+  box-shadow: var(--card-shadow);
 }
 
 .chart-value {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--text-main);
 }
 
 .market-stat p {
   font-size: 1.2rem;
   font-weight: 500;
-  color: var(--primary-light);
+  color: var(--text-secondary);
 }
 
 .market-divider {
-  width: 2px;
+  width: 4px; /* Thicker for visibility */
   height: 100px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--brand-gradient); /* Colorful gradient */
+  border-radius: 4px;
 }
 
 @media (max-width: 768px) {

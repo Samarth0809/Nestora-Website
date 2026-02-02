@@ -1,5 +1,5 @@
 .solution-section {
-  background: linear-gradient(to bottom, #ffffff, #f8fafc);
+  background: var(--bg-tint); /* Warm tint */
   overflow: hidden;
   padding: 60px 0;
   position: relative;
@@ -12,9 +12,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
   background-size: 40px 40px;
-  opacity: 0.3;
+  opacity: 0.5;
   pointer-events: none;
 }
 
@@ -84,7 +84,7 @@
 .feature-card-tilt:hover {
   background: var(--white);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
-  border-color: rgba(0, 188, 212, 0.2);
+  border-color: rgba(240, 80, 83, 0.2);
 }
 
 .feature-icon-wrapper {
@@ -103,10 +103,10 @@
 }
 
 .feature-card-tilt:hover .feature-icon-wrapper {
-  background: var(--primary-aqua);
+  background: var(--brand-gradient); /* Use brand gradient on hover */
   transform: scale(1.1) rotate(-5deg);
   border-color: transparent;
-  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.25);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Neutral shadow or colored if easy */
 }
 
 .feature-icon {
@@ -154,7 +154,7 @@
   transform: translate(-50%, -50%);
   width: 120%;
   height: 120%;
-  background: radial-gradient(circle at center, rgba(0, 188, 212, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle at center, rgba(226, 77, 140, 0.15) 0%, transparent 70%); /* Soft Pink/Purple */
   z-index: 0;
   pointer-events: none;
 }
@@ -238,8 +238,8 @@
 
 .app-sidebar {
   width: 60px;
-  background: var(--white);
-  border-right: 1px solid var(--gray-100);
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-tint) 100%); /* Subtle tint */
+  border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -292,7 +292,7 @@
 }
 
 .sidebar-icon.active {
-  background: rgba(0, 188, 212, 0.1);
+  background: var(--bg-tint); /* Weak orange/pink tint */
 }
 
 .sidebar-icon.active::after {
@@ -429,9 +429,9 @@
 }
 
 .order-item.new-order {
-  border-color: var(--primary-light);
-  background: linear-gradient(to right, #f0f9ff, white);
-  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.08);
+  border-color: var(--primary-light); /* tint */
+  background: linear-gradient(to right, var(--bg-tint), #FFFFFF);
+  box-shadow: 0 4px 12px rgba(255, 122, 89, 0.08); /* Soft Coral shadow */
 }
 
 .order-left {
@@ -480,13 +480,13 @@
 }
 
 .action-btn.primary {
-  background: var(--primary-aqua);
+  background: var(--heading-black); /* Dark CTA */
   color: white;
-  box-shadow: 0 2px 8px rgba(0, 188, 212, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .action-btn.primary:hover {
-  background: var(--primary-dark);
+  background: var(--primary-gray); /* Or slightly lighter black */
   transform: translateY(-1px);
 }
 

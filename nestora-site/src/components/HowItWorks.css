@@ -1,6 +1,6 @@
 .how-it-works {
   padding: 90px 0;
-  background: #f3f7f6;
+  background: var(--bg-tint);
 }
 
 .intro {
@@ -39,11 +39,12 @@
   background: var(--white);
   border-radius: 20px;
   padding: 26px;
-  border: 1px solid rgba(0, 150, 136, 0.14);
-  box-shadow: 0 20px 36px rgba(11, 35, 64, 0.08);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.04);
   display: flex;
   flex-direction: column;
   gap: 16px;
+  border-top: 4px solid var(--primary-coral);
 }
 
 .workflow-card header {

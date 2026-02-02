@@ -35,6 +35,9 @@ const Footer = () => {
             <h4>Connect</h4>
             <p>Email: <a href="mailto:nestora.privatelimited@gmail.com">nestora.privatelimited@gmail.com</a></p>
             <p>Location: Mumbai, India</p>
+            <p>
+              <a className="cta-button" href="https://vendor-apk.vercel.app/login" target="_blank" rel="noopener noreferrer">Vendor Login</a>
+            </p>
           </div>
         </div>
         <div className="footer-bottom">

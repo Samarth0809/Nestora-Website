@@ -1,5 +1,5 @@
 .problem-section {
-  background-color: var(--gray-50);
+  background-color: var(--bg-tint);
   position: relative;
   overflow: hidden;
 }
@@ -41,9 +41,9 @@
 }
 
 /* Specific border colors for each card type */
-.problem-card:nth-child(1) { border-color: var(--accent-orange); }
-.problem-card:nth-child(2) { border-color: var(--gold); }
-.problem-card:nth-child(3) { border-color: var(--gray-800); }
+.problem-card:nth-child(1) { border-color: var(--primary-orange); }
+.problem-card:nth-child(2) { border-color: var(--primary-coral); }
+.problem-card:nth-child(3) { border-color: var(--primary-purple); }
 
 .problem-card .icon-wrapper {
   width: 80px;

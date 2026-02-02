@@ -54,8 +54,16 @@
 }
 
 .footer-section a:hover {
-  color: var(--accent-hover);
+  color: var(--primary-coral);
   transform: translateX(3px);
+}
+
+/* Ensure CTA buttons inside footer use white text and preserve white on hover */
+.footer-section a.cta-button {
+  color: var(--white);
+}
+.footer-section a.cta-button:hover {
+  color: var(--white);
 }
 
 .cta-button {
@@ -73,8 +81,9 @@
 }
 
 .cta-button:hover {
-  background-color: var(--accent-hover);
+  background-color: var(--primary-coral);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(226,77,140,0.12);
 }
 
 .footer-bottom {

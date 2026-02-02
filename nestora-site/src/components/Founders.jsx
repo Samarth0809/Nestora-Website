@@ -64,7 +64,7 @@ const Founders = () => {
             <motion.div 
               key={founder.id} 
               className="founder-card card"
-              whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)" }}
+              whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(240, 80, 83, 0.15)" }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -6,45 +6,74 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: #213547;
-  background-color: #ffffff;
+  color: #6B6B6B;
+  background-color: #FFFFFF;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Brand palette (Nestora - Aqua Blue Theme) */
-  --primary-aqua: #00BCD4;
-  --primary-dark: #006064;
-  --primary-light: #E0F7FA;
-  --primary-teal: #00838F;
-  --primary-navy: #006064;
-  --accent-orange: #FF6E40;
-  --accent-hover: #FF3D00;
+  /* Brand palette (Clean & Minimal Warm Gradient) */
+  --brand-gradient: linear-gradient(90deg, #FFA63A, #FF7A59, #E24D8C, #7B3FE4);
+  
+  --primary-orange: #FFA63A;
+  --primary-coral: #FF7A59;
+  --primary-pink: #E24D8C;
+  --primary-purple: #7B3FE4;
+
+  /* Mapped Legacy Variables */
+  --primary-aqua: #FF7A59; /* Coral */
+  --primary-teal: #E24D8C; /* Pink */
+  --primary-dark: #0B0B0B; /* Heading Black */
+  --primary-navy: #7B3FE4; /* Purple */
+  --primary-light: #FFF8F2; /* Warm Tint */
+  
+  --accent-orange: #FFA63A;
+  --accent-hover: #E24D8C; 
   --success-green: #00C853;
   --danger-red: #D50000;
   --gold: #FFD700;
   --white: #ffffff;
   --header-height: 70px;
-  /* Neutral grays (from light to dark) */
-  --gray-50: #F8FAFC;
-  --gray-100: #F1F5F9;
-  --gray-200: #E2E8F0;
-  --gray-300: #CBD5E1;
-  --muted-gray: #64748B;
-  --gray-600: #475569;
-  --gray-700: #334155;
-  --gray-800: #1E293B;
-  --gray-900: #0F172A;
+
+  /* Light Theme Palette */
+  --bg-main: #FFFFFF;
+  --bg-tint: #FFF8F2;
+  --bg-card: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  
+  --text-main: #0B0B0B;
+  --text-secondary: #6B6B6B;
+  --text-muted: #9A9A9A;
+
+  --border-color: #ECECEC;
+
+  /* Neutral grays */
+  --gray-50: #FFFFFF;
+  --gray-100: #FFF8F2;
+  --gray-200: #ECECEC;
+  --gray-300: #E5E5E5;
+  --muted-gray: #9A9A9A;
+  --gray-600: #9A9A9A;
+  --gray-700: #6B6B6B;
+  --gray-800: #111111;
+  --gray-900: #0B0B0B;
 
   /* Animation Variables */
   --transition-speed: 0.3s;
-  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: 1px solid rgba(255, 255, 255, 0.3);
-  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  --card-shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: 1px solid rgba(0, 0, 0, 0.05);
+  --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  
+  /* Decorative Accents */
+  --accent-soft-orange: rgba(255, 166, 58, 0.25);
+  --accent-soft-pink: rgba(226, 77, 140, 0.25);
+  --accent-soft-purple: rgba(123, 63, 228, 0.25);
 }
 
 * {
@@ -57,11 +86,9 @@ body {
   min-height: 100vh;
   /* keep scroll offset in sync with fixed header height */
   scroll-padding-top: var(--header-height);
-  background-color: var(--gray-50);
-  color: var(--gray-900);
-  background-image: 
-    radial-gradient(at 0% 0%, hsla(189,100%,96%,1) 0, transparent 50%), 
-    radial-gradient(at 100% 0%, hsla(189,100%,96%,1) 0, transparent 50%);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  background-image: none;
 }
 
 /* Animations */
@@ -103,9 +130,9 @@ body {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-aqua) 0%, var(--primary-teal) 100%);
+  background: var(--gray-900);
   color: var(--white);
-  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary::after {
@@ -121,7 +148,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.4);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover::after {
@@ -130,24 +157,25 @@ body {
 
 .btn-secondary {
   background: var(--white);
-  color: var(--primary-dark);
-  border: 2px solid var(--gray-100);
+  color: var(--gray-900); /* Dark text */
+  border: 1px solid var(--border-color);
 }
 
 .btn-secondary:hover {
-  border-color: var(--primary-aqua);
-  color: var(--primary-aqua);
+  border-color: var(--gray-300);
+  color: var(--brand-gradient); /* Maybe subtle hover */
   background: var(--gray-50);
 }
 
 /* Card Styles */
 .card {
-  background: var(--white);
+  background: var(--bg-card);
+  color: var(--text-main);
   border-radius: 16px;
   box-shadow: var(--card-shadow);
   transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid var(--border-color);
 }
 
 .card:hover {
@@ -164,43 +192,7 @@ body {
   box-shadow: var(--glass-shadow);
 }
 
-/* Button Styles */
-.btn {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-  transition: all var(--transition-speed);
-  border: none;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary-aqua) 0%, var(--primary-teal) 100%);
-  color: var(--white);
-  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.4);
-}
-
-.btn-secondary {
-  background-color: var(--white);
-  color: var(--primary-teal);
-  border: 2px solid var(--primary-light);
-}
-
-.btn-secondary:hover {
-  border-color: var(--primary-aqua);
-  background-color: var(--primary-light);
-  color: var(--primary-dark);
-}
+/* Button styles consolidated above */
 
 /* Ensure every main section uses consistent vertical spacing */
 section {

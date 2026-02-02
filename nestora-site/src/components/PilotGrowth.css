@@ -1,6 +1,6 @@
 .pilot-growth {
   padding: 96px 0;
-  background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--bg-tint) 0%, #ffffff 100%);
 }
 
 .pilot-growth .container {
@@ -48,8 +48,9 @@
   background: #ffffff;
   border-radius: 20px;
   padding: 32px 28px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 18px 36px rgba(16, 24, 40, 0.08);
+  border: 1px solid var(--border-color);
+  border-bottom: 4px solid var(--primary-pink);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.06);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 

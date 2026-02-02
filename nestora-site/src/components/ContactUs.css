@@ -14,15 +14,16 @@
 .contact-info {
   flex: 1;
   padding: 60px;
-  background: var(--primary-dark);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--bg-tint) 0%, #fff 100%);
+  color: var(--text-main);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-right: 4px solid var(--primary-orange);
 }
 
 .contact-info .eyebrow {
-  color: var(--primary-aqua);
+  color: var(--primary-coral);
 }
 
 .contact-info h2 {
@@ -31,7 +32,7 @@
 }
 
 .contact-info p {
-  color: var(--gray-200);
+  color: var(--text-secondary);
   margin-bottom: 40px;
   font-size: 1.1rem;
 }
@@ -50,7 +51,7 @@
 }
 
 .contact-item a {
-  color: var(--white);
+  color: var(--text-main);
   text-decoration: underline;
 }
 
@@ -89,7 +90,7 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-aqua);
-  box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.1);
+  box-shadow: 0 0 0 3px rgba(240, 80, 83, 0.1);
 }
 
 .error-message {
