@@ -1,5 +1,5 @@
 {
-  "installCommand": "npm ci --include=optional --no-audit --no-fund",
+  "installCommand": "npm install --no-audit --no-fund",
   "buildCommand": "npm run build",
   "env": {
     "ROLLUP_DISABLE_NATIVE": "1",
