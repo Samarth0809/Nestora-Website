@@ -1,12 +1,14 @@
 {
-  "installCommand": "npm ci",
+  "installCommand": "npm ci --include=optional --no-audit --no-fund",
   "buildCommand": "npm run build",
   "env": {
-    "ROLLUP_DISABLE_NATIVE": "1"
+    "ROLLUP_DISABLE_NATIVE": "1",
+    "NPM_CONFIG_INCLUDE": "optional"
   },
   "build": {
     "env": {
-      "ROLLUP_DISABLE_NATIVE": "1"
+      "ROLLUP_DISABLE_NATIVE": "1",
+      "NPM_CONFIG_INCLUDE": "optional"
     }
   }
 }
