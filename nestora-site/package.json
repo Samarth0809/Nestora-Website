@@ -12,8 +12,7 @@
     "test:smtp": "node test-smtp.js",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "postinstall": "npm rebuild rollup || true"
+    "preview": "vite preview"
   },
   "dependencies": {
     "cors": "^2.8.5",
