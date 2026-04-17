@@ -78,18 +78,9 @@ const ContactUs = () => {
       <div className="container">
         <div className="contact-wrapper card animate-fade-in">
           <div className="contact-info">
-            <span className="eyebrow contact-eyebrow">Get in Touch</span>
-            <h2>Ready to Build Local Commerce With Us?</h2>
-            <p>
-              Whether you are an investor, a kirana owner, or an operator exploring collaboration,
-              we would love to connect.
-            </p>
-
-            <div className="contact-pill-row">
-              <span className="contact-pill">Fast response</span>
-              <span className="contact-pill">Founder-led conversations</span>
-            </div>
-
+            <span className="eyebrow">Get in Touch</span>
+            <h2>Ready to Transform Local Commerce?</h2>
+            <p>Whether you're an investor, a kirana owner, or just curious, we'd love to hear from you.</p>
             <div className="contact-details">
               <div className="contact-item">
                 <span className="icon">📧</span>
