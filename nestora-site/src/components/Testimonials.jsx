@@ -62,7 +62,7 @@ const testimonials = [
     role: "Partner Store · Mulund",
     image: nileshImg,
     quote:
-      "Dark-store apps were pulling my customers away, and I had no way to compete on speed or technology. When the Nestora team approached me, I explained my biggest worries—delivery, expired stock, and margin loss. They showed me how my own store could fulfill online orders using their system. Today, my daily orders have doubled, and I don’t worry about operations anymore.",
+      "We are in planning with Nestora, and the model already looks strong for our local demand.",
   },
   {
     id: 2,
@@ -70,7 +70,7 @@ const testimonials = [
     role: "Partner Store · Karjat",
     image: mayurImg,
     quote:
-      "I told the Nestora team that I wanted to go online but found other apps complicated and risky. They walked me through how Nestora works on a simple mobile dashboard and how deliveries are handled without extra investment. Now I can track inventory, orders, and earnings directly on my phone.",
+      "Our planning discussions have been clear and practical, especially around simple mobile operations.",
   },
   {
     id: 3,
@@ -78,7 +78,7 @@ const testimonials = [
     role: "Partner Store · Mulund",
     image: kiranaImg,
     quote:
-      "My concern was speed. Customers had started ordering from dark stores because they promised faster delivery. Nestora explained how nearby kiranas like mine could deliver in 10 minutes using local runners. I didn’t need to hire staff or stock extra inventory, and my regular customers returned.",
+      "The 10-minute neighbourhood model fits our store, and we are optimistic about the rollout.",
   },
   {
     id: 4,
@@ -86,7 +86,7 @@ const testimonials = [
     role: "Partner Store · Karjat",
     image: kirana2Img,
     quote:
-      "Big delivery apps made it difficult for small shops to survive. When Nestora approached me, I shared how my walk-in sales were dropping. They showed me a model where my own customers could order online from my store. Now, I compete with big apps without losing control of my business.",
+      "From our planning stage itself, Nestora feels like a partner that supports kiranas first.",
   },
   {
     id: 5,
@@ -94,7 +94,7 @@ const testimonials = [
     role: "Partner Store · Mulund",
     image: kirana3Img,
     quote:
-      "I was hesitant because most platforms ask for commission or upfront investment. Nestora explained their zero-investment onboarding and how earnings remain transparent. Within the first month, my sales increased by nearly 40%, and I felt confident scaling online.",
+      "The zero-investment approach is a big reason we are moving ahead positively with Nestora.",
   },
   {
     id: 6,
@@ -102,7 +102,7 @@ const testimonials = [
     role: "Partner Store · Karjat",
     image: kirana4Img,
     quote:
-      "Delivery quality was my biggest concern. I told the Nestora team that customers blame the shop if delivery goes wrong. They explained their runner system and tamper-proof handling. Today, deliveries are smooth, customers are satisfied, and my store’s reputation has improved.",
+      "Even before launch, the planning gives us confidence on quality, delivery flow, and customer trust.",
   },
 ];
 

@@ -11,6 +11,7 @@ import SolutionPage from './pages/SolutionPage';
 import MarketPage from './pages/MarketPage';
 import TeamPage from './pages/TeamPage';
 import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
               <Route path="/market" element={<MarketPage />} />
               <Route path="/team" element={<TeamPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              {/* Catch-all 404 Route */}
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </main>
         <Footer />

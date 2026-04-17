@@ -1,15 +1,13 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { 
   Mail, 
   MapPin, 
-  Phone, 
   Send, 
   CheckCircle, 
   AlertCircle, 
   Linkedin, 
-  Twitter, 
-  Globe,
-  ArrowRight
+  Twitter
 } from 'lucide-react';
 import './TeamContact.css';
 import ankitImg from '../assets/ankit_profile.jpeg';
@@ -34,14 +32,11 @@ const TeamContact = () => {
     setSent(false);
     setEmailed(false);
     setError('');
-    if (clearForm) {
-      setFormData(initialFormState);
-    }
+    if (clearForm) setFormData(initialFormState);
   };
 
   const updateField = (field) => (e) => {
-    const value = e.target.value;
-    setFormData((prev) => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
   };
 
   const validate = () => {
@@ -100,59 +95,73 @@ const TeamContact = () => {
       name: 'Sahil Deshmukh',
       title: 'Co-Founder & COO',
       image: sahilImg,
-      bio: 'Driving marketing vision and user growth strategies with a focus on trust and authenticity.',
-      socials: { linkedin: '#', twitter: '#' }
+      bio: 'Driving operations and logistics.',
+      linkedin: 'https://www.linkedin.com/in/sahil-deshmukh-298a60187/'
     },
     {
       name: 'Ankit Thakur',
       title: 'Founder & CEO',
       image: ankitImg,
-      bio: 'Visionary entrepreneur leading the mission to empower small businesses through technology.',
-      socials: { linkedin: '#', twitter: '#' }
+      bio: 'Visionary entrepreneur leading the mission.',
+      linkedin: 'https://www.linkedin.com/in/ankit-thakur-018881290/'
     },
     {
       name: 'Samarth Shete',
       title: 'Founding Engineer',
       image: samarthImg,
-      bio: 'Architecting scalable solutions and driving technical innovation for the Nestora platform.',
-      socials: { linkedin: '#', twitter: '#' }
+      bio: 'Architecting scalable solutions.',
+      linkedin: 'https://www.linkedin.com/in/samarth-jagakar'
     }
   ];
 
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
   return (
     <div className="tc-page">
-      {/* Hero Section */}
       <section className="tc-hero">
-        <div className="tc-hero-content">
-          <h1 className="tc-title">Get in <span className="highlight">Touch</span></h1>
+        <motion.div 
+          className="tc-hero-content"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+        >
+          <span className="tc-eyebrow">Contact Us</span>
+          <h1 className="tc-title">Get in Touch</h1>
           <p className="tc-subtitle">
             Have a question, partnership idea, or just want to say hello? 
             We'd love to hear from you.
           </p>
-        </div>
+        </motion.div>
         <div className="tc-hero-bg-shape"></div>
       </section>
 
       <div className="tc-container">
         <div className="tc-grid">
           
-          {/* Left Column: Contact Info & Founders Preview */}
-          <div className="tc-left-col">
+          <motion.div 
+            className="tc-left-col"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+          >
             <div className="tc-info-cards">
-              <div className="tc-info-card">
-                <div className="icon-box"><Mail size={24} /></div>
+              <div className="tc-info-glass-card">
+                <div className="icon-box"><Mail size={22} /></div>
                 <div>
                   <h3>Email Us</h3>
                   <p>hello@nestora.com</p>
-                  <p>support@nestora.com</p>
                 </div>
               </div>
-              <div className="tc-info-card">
-                <div className="icon-box"><MapPin size={24} /></div>
+              <div className="tc-info-glass-card">
+                <div className="icon-box"><MapPin size={22} /></div>
                 <div>
                   <h3>Visit Us</h3>
                   <p>Bangalore, India</p>
-                  <p>Innovation Hub, 560001</p>
                 </div>
               </div>
             </div>
@@ -161,33 +170,47 @@ const TeamContact = () => {
               <h2>Meet the Team</h2>
               <div className="founders-list">
                 {founders.map((founder, idx) => (
-                  <div key={idx} className="founder-card-mini">
+                  <motion.div 
+                    key={idx} 
+                    className="founder-card-mini-glass"
+                    whileHover={{ x: 5, backgroundColor: 'rgba(255,255,255,0.9)' }}
+                  >
                     <img src={founder.image} alt={founder.name} className="founder-img" />
                     <div className="founder-details">
                       <h4>{founder.name}</h4>
                       <span>{founder.title}</span>
                       <p>{founder.bio}</p>
                       <div className="founder-socials">
-                        <Linkedin size={16} />
-                        <Twitter size={16} />
+                        <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`LinkedIn for ${founder.name}`}>
+                          <Linkedin size={16} />
+                        </a>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Column: Contact Form */}
-          <div className="tc-right-col">
-            <div className="tc-form-wrapper">
+          <motion.div 
+            className="tc-right-col"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="tc-form-glass-wrapper">
               <div className="form-header">
-                <h2>Send us a Message</h2>
+                <h2>Send a Message</h2>
                 <p>We usually respond within 24 hours.</p>
               </div>
 
               {sent ? (
-                <div className="success-message">
+                <motion.div 
+                  className="success-message"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                >
                   <CheckCircle size={48} className="success-icon" />
                   <h3>Message Sent!</h3>
                   <p>Thank you for reaching out. We'll get back to you shortly.</p>
@@ -195,36 +218,37 @@ const TeamContact = () => {
                   <button className="tc-btn-reset" onClick={() => resetFlow(true)}>
                     Send Another Message
                   </button>
-                </div>
+                </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="tc-form">
-                  <div className="form-group">
-                    <label>Name</label>
-                    <input 
-                      type="text" 
-                      placeholder="Your full name"
-                      value={formData.name}
-                      onChange={updateField('name')}
-                      className="tc-input"
-                    />
-                  </div>
-                  
-                  <div className="form-group">
-                    <label>Email</label>
-                    <input 
-                      type="email" 
-                      placeholder="you@company.com"
-                      value={formData.email}
-                      onChange={updateField('email')}
-                      className="tc-input"
-                    />
+                  <div className="form-group-row">
+                    <div className="form-group">
+                      <label>Name</label>
+                      <input 
+                        type="text" 
+                        placeholder="John Doe"
+                        value={formData.name}
+                        onChange={updateField('name')}
+                        className="tc-input"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Email</label>
+                      <input 
+                        type="email" 
+                        placeholder="john@company.com"
+                        value={formData.email}
+                        onChange={updateField('email')}
+                        className="tc-input"
+                      />
+                    </div>
                   </div>
 
                   <div className="form-group">
                     <label>Organization (Optional)</label>
                     <input 
                       type="text" 
-                      placeholder="Your company or organization"
+                      placeholder="Company Name"
                       value={formData.org}
                       onChange={updateField('org')}
                       className="tc-input"
@@ -259,7 +283,7 @@ const TeamContact = () => {
                 </form>
               )}
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

@@ -1,0 +1,147 @@
+.team-page-wrap {
+  width: 100%;
+  padding: 16px 16px 22px;
+  background:
+    radial-gradient(120% 88% at -10% -10%, rgba(255, 166, 58, 0.12) 0%, rgba(255, 166, 58, 0) 60%),
+    radial-gradient(120% 85% at 110% -6%, rgba(226, 77, 140, 0.1) 0%, rgba(226, 77, 140, 0) 58%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 248, 242, 0.96) 50%, rgba(255, 255, 255, 0.98) 100%);
+}
+
+.team-hero-shell {
+  position: relative;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  box-shadow: 0 24px 64px rgba(15, 23, 42, 0.08);
+  padding: 34px 30px 30px;
+  background:
+    radial-gradient(130% 88% at -8% -8%, rgba(255, 166, 58, 0.2) 0%, rgba(255, 166, 58, 0) 60%),
+    radial-gradient(125% 90% at 108% -6%, rgba(226, 77, 140, 0.18) 0%, rgba(226, 77, 140, 0) 56%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 248, 242, 0.92) 46%, rgba(248, 244, 255, 0.9) 100%);
+}
+
+.team-orb {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 999px;
+}
+
+.team-orb-left {
+  left: -170px;
+  bottom: -210px;
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(123, 63, 228, 0.16) 0%, rgba(123, 63, 228, 0) 72%);
+}
+
+.team-orb-right {
+  right: -110px;
+  top: -120px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 122, 89, 0.2) 0%, rgba(255, 122, 89, 0) 72%);
+}
+
+.team-content-layer {
+  position: relative;
+  z-index: 1;
+}
+
+.team-headline-block {
+  max-width: 920px;
+  margin: 0 auto 22px;
+  text-align: center;
+}
+
+.team-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 122, 89, 0.28);
+  color: #ff7a59;
+  background: rgba(255, 236, 229, 0.85);
+  box-shadow: 0 8px 18px rgba(255, 122, 89, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.team-main-title {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(2.2rem, 4.8vw, 4.1rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.team-brand-highlight {
+  color: var(--primary-coral);
+}
+
+.team-subtitle-text {
+  max-width: 760px;
+  margin: 12px auto 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #475569;
+}
+
+.team-founders-section {
+  padding: 0;
+}
+
+.team-founders-container {
+  max-width: 1240px;
+  padding: 0 4px;
+}
+
+@media (max-width: 1024px) {
+  .team-page-wrap {
+    padding: 14px 14px 18px;
+  }
+
+  .team-hero-shell {
+    border-radius: 26px;
+    padding: 26px 18px 20px;
+  }
+
+  .team-headline-block {
+    margin-bottom: 16px;
+  }
+
+  .team-subtitle-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-page-wrap {
+    padding: 10px 10px 14px;
+  }
+
+  .team-hero-shell {
+    border-radius: 22px;
+    padding: 18px 12px 14px;
+  }
+
+  .team-main-title {
+    font-size: 2rem;
+  }
+
+  .team-subtitle-text {
+    font-size: 0.87rem;
+    line-height: 1.55;
+  }
+
+  .team-headline-block {
+    margin-bottom: 10px;
+  }
+}

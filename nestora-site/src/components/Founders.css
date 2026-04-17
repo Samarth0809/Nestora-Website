@@ -1,76 +1,185 @@
 .founders-section {
-  background-color: var(--white);
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.founders-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 4px;
+}
+
+.founders-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.founders-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  color: #64748b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.founders-title {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .founders-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  margin-top: 50px;
-  justify-content: center;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .founder-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+  padding: 24px 20px;
   text-align: center;
-  padding: 20px;
-  background: var(--white);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
 
 .founder-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* More subtle shadow */
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.14);
 }
 
-.founder-image-wrapper {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 25px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #fff; /* White border */
-  padding: 4px; /* Space between border and image */
-  background: var(--white);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); /* Soft shadow */
+.founder-card-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ffd7a3, #ffc9d9, #d8d0ff);
 }
 
-.founder-image {
+.founder-avatar-wrap {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  padding: 6px;
+}
+
+.founder-avatar {
   width: 100%;
   height: 100%;
+  border-radius: 999px;
   object-fit: cover;
-  border-radius: 50%;
-  transition: transform 0.5s ease;
 }
 
-.founder-card:hover .founder-image {
-  transform: scale(1.1);
+.founder-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.founder-info {
-  padding: 0 10px;
-}
-
-.founder-info h3 {
-  color: var(--primary-dark);
-  margin-bottom: 8px;
-  font-size: 1.5rem;
+.founder-name {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 
 .founder-role {
-  display: block;
-  color: var(--primary-aqua);
+  margin: 6px 0 10px;
+  color: #64748b;
+  font-size: 0.74rem;
   font-weight: 700;
-  margin-bottom: 15px;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
+  letter-spacing: 0.12em;
 }
 
 .founder-bio {
-  color: var(--gray-600);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  margin: 0 0 14px;
+  color: #475569;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.founder-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  background: #f8fafc;
+  color: #0f172a;
+  padding: 8px 14px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.founder-link:hover {
+  border-color: #cbd5e1;
+  background: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .founders-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .founder-avatar-wrap {
+    width: 98px;
+    height: 98px;
+  }
+}
+
+@media (max-width: 768px) {
+  .founders-container {
+    padding: 0;
+  }
+
+  .founders-grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 6px;
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .founders-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .founder-card {
+    flex: 0 0 86%;
+    min-width: 250px;
+    max-width: 310px;
+    scroll-snap-align: center;
+    padding: 20px 16px;
+  }
+
+  .founder-avatar-wrap {
+    width: 88px;
+    height: 88px;
+  }
+
+  .founder-bio {
+    font-size: 0.84rem;
+  }
 }

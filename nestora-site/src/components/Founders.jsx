@@ -1,42 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './Founders.css';
+import { Linkedin } from 'lucide-react';
 import ankitImg from '../assets/ankit_profile.jpeg';
 import sahilImg from '../assets/sahil_profile.jpeg';
 import samarthImg from '../assets/samarth_profile.png';
+import './Founders.css';
 
-const Linkedin = ({ size = 24, color = "currentColor", ...props }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke={color} 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    {...props}
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
-
-const Founders = () => {
+const Founders = ({
+  className = '',
+  hideHeader = false,
+  sectionClassName = '',
+  containerClassName = ''
+}) => {
   const founders = [
     {
       id: 1,
-      name: 'Sahil',
-      role: 'Co-Founder',
+      name: 'Sahil Deshmukh',
+      role: 'Co-Founder & COO',
       image: sahilImg,
-      bio: 'Operations expert ensuring seamless delivery and logistics.',
+      bio: 'Operations expert ensuring seamless delivery and logistics workflows.',
       linkedin: 'https://www.linkedin.com/in/sahil-deshmukh-298a60187/'
     },
     {
       id: 2,
-      name: 'Ankit',
+      name: 'Ankit Thakur',
       role: 'Founder & CEO',
       image: ankitImg,
       bio: 'Visionary leader with a passion for empowering local businesses.',
@@ -44,50 +31,71 @@ const Founders = () => {
     },
     {
       id: 3,
-      name: 'Samarth',
-      role: 'Co-Founder',
+      name: 'Samarth Jagakar',
+      role: 'Co-Founder & Techie',
       image: samarthImg,
-      bio: 'Tech wizard building the robust platform behind Nestora.',
+      bio: 'Tech wizard building the robust platform architecture behind Nestora.',
       linkedin: 'https://www.linkedin.com/in/samarth-jagakar'
     },
   ];
 
   return (
-    <section id="founders" className="founders-section">
-      <div className="container">
-        <div className="section-header">
-          <span className="eyebrow">Leadership</span>
-          <h2>Meet the Founders</h2>
-        </div>
-        <div className="founders-grid">
-          {founders.map((founder) => (
-            <motion.div 
-              key={founder.id} 
-              className="founder-card card"
-              whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(240, 80, 83, 0.15)" }}
-              initial={{ opacity: 0, y: 20 }}
+    <section
+      id="founders"
+      className={`founders-section ${sectionClassName}`}
+    >
+      <div className={`founders-container ${containerClassName}`}>
+        {!hideHeader && (
+          <motion.div
+            className="founders-header"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="founders-eyebrow">
+              Leadership
+            </span>
+            <h2 className="founders-title">
+              Meet the Directors
+            </h2>
+          </motion.div>
+        )}
+
+        <div className={`founders-grid ${className}`}>
+          {founders.map((founder, index) => (
+            <motion.div
+              key={founder.id}
+              className="founder-card"
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: founder.id * 0.1 }}
+              transition={{ duration: 0.7, delay: index * 0.15, ease: [0.25, 0.4, 0.25, 1] }}
             >
-              <div className="founder-image-wrapper">
-                <img src={founder.image} alt={founder.name} className="founder-image" />
+              <div className="founder-card-bar" />
+              <div className="founder-avatar-wrap">
+                <img
+                  src={founder.image}
+                  alt={founder.name}
+                  className="founder-avatar"
+                />
               </div>
-              <div className="founder-info">
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '8px' }}>
-                  <h3 style={{ margin: 0 }}>{founder.name}</h3>
-                  <a 
-                    href={founder.linkedin} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    aria-label="LinkedIn"
-                    style={{ color: '#0a66c2', display: 'flex', alignItems: 'center' }}
-                  >
-                    <Linkedin size={20} />
-                  </a>
-                </div>
-                <span className="founder-role">{founder.role}</span>
+              <div className="founder-meta">
+                <h3 className="founder-name">{founder.name}</h3>
+                <span className="founder-role">
+                  {founder.role}
+                </span>
                 <p className="founder-bio">{founder.bio}</p>
+                <a
+                  href={founder.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="founder-link"
+                  aria-label={`LinkedIn profile for ${founder.name}`}
+                >
+                  <Linkedin size={18} strokeWidth={2} />
+                  <span>Connect</span>
+                </a>
               </div>
             </motion.div>
           ))}

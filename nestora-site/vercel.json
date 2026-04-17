@@ -1,6 +1,12 @@
 {
   "installCommand": "npm install --no-audit --no-fund",
   "buildCommand": "npm run build",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
   "env": {
     "ROLLUP_DISABLE_NATIVE": "1",
     "NPM_CONFIG_INCLUDE": "optional"
